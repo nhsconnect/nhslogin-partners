@@ -1,0 +1,13 @@
+// Import NHS.UK frontend library
+@import 'node_modules/nhsuk-frontend/packages/nhsuk';
+
+// Patterns that are not in the NHS.UK frontend library
+@import 'patterns/check-your-answers';
+
+// Components that are not in the NHS.UK frontend library
+@import 'components/related-nav';
+
+// Add your extra styles here...
+@import 'components/override';
+@import 'components/feedback-banner';
+@import 'components/_nhsx';

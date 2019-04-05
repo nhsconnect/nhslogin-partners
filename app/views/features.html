@@ -1,0 +1,148 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "Features and roadmap"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <h1 class="nhsuk-u-margin-bottom-5">Features and Roadmap
+      <span>v0</span>
+      <span><a href="features-1">v1</a></span>
+      <span><a href="features-2">v2</a></span>
+      </h1>
+       <p>We are defining our roadmap based on research, data insights, and input from partners and potential partners about the features which are important to them.</p>
+      <p>To ask a question about a feature or to vote for a feature to be prioritised, <a href="">drop an email to the NHS login inbox.</a></p>
+      <p>View more information on <a href="get-started/get-started"> how to onboard,</a> or <a href="">investigate technical integration</a><mark>add correct link</mark></p>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+        <col width="">
+        <col width="200">
+        <caption class="nhsuk-table__caption">Features and Roadmap</caption>
+        <thead class="nhsuk-table__head">
+        <tr class="nhsuk-table__row">
+        <th class="nhsuk-table__header" scope="col">Feature</th>
+        <th class="nhsuk-table__header" scope="col">Live</th>
+        </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+        <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">
+          Verification levels <br />
+          <span style="font-size:16px; line-height:24px">P0 and P9 verification levels</span>
+        </td>
+        <td class="nhsuk-table__cell ">
+          <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+          </svg>
+        </td>
+        </tr>
+        <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">
+          Change contact details <br />
+          <span style="font-size:16px; line-height:24px">Enable users to amend the phone number and email address linked to their account</span>
+        </td>
+        <td class="nhsuk-table__cell ">Jan - Mar 2019</td>
+        </tr>
+        <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">
+          Consent <br />
+          <span style="font-size:16px; line-height:24px">Users will be prompted to consent to share data with services</span>
+        </td>
+        <td class="nhsuk-table__cell ">Jan - Mar 2019</td>
+        </tr>
+        <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">
+        Passwordless login - apps / devices <br />
+        <span style="font-size:16px; line-height:24px">Passwordless login for apps and devices that support biometric unlocking Automation of ID checks</span>
+        </td>
+        <td class="nhsuk-table__cell ">Jan - Mar 2019</td>
+        </tr>
+        <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">
+        ID support <br />
+        <span style="font-size:16px; line-height:24px">Support for worldwide government issued ID documents</span>
+        </td>
+        <td class="nhsuk-table__cell ">Jan - Mar 2019</td>
+        </tr>
+
+        <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">
+        Single sign-on <br />
+        <span style="font-size:16px; line-height:24px">Seemless switching between services using NHS login (single sign-on)</span>
+        </td>
+        <td class="nhsuk-table__cell ">Apr - Jun 2019</td>
+        </tr>
+        <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">
+        Delegated Access <br />
+        <span style="font-size:16px; line-height:24px">Delegated / Proxy access (limited trial)</span>
+        </td>
+        <td class="nhsuk-table__cell ">Apr - Jun 2019</td>
+        </tr>
+        <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">
+        Desktop ID check <br />
+        <span style="font-size:16px; line-height:24px">Ability for users to switch between desktop and mobile devices to assist ID checks</span>
+        </td>
+        <td class="nhsuk-table__cell ">Apr - Jun 2019</td>
+        </tr>
+        <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">
+        Offline Vouching <br />
+        <span style="font-size:16px; line-height:24px">Offline vouching and user invite to prescribed apps</span>
+        </td>
+        <td class="nhsuk-table__cell ">Apr - Jun 2019</td>
+        </tr>
+
+        <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">
+        Passwordless login - browser <br />
+        <span style="font-size:16px; line-height:24px">Passwordless login for browser based services</span>
+        </td>
+        <td class="nhsuk-table__cell ">Jul onwards</td>
+        </tr>
+        <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">
+        Offline ID checks <br />
+        <span style="font-size:16px; line-height:24px">Offline ID checks at locations other than GP practices</span>
+        </td>
+        <td class="nhsuk-table__cell ">Jul onwards</td>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="nhsuk-grid-column-two-thirds">
+    
+    </div>
+  </div>
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

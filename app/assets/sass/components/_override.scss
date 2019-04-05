@@ -1,0 +1,13 @@
+// fix to the reverse hover on anchor tags
+a.nhsuk-button--reverse {
+    &.nhsuk-button:link, &.nhsuk-button:visited, &.nhsuk-button:active {
+        background-color: #ffffff;
+        box-shadow: 0 4px 0 #212b32;
+        color: #212b32;
+    }
+
+    &.nhsuk-button:hover {
+        background-color: #f2f2f2;
+        color: #212b32;
+    }
+}

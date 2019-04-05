@@ -1,0 +1,45 @@
+{% extends 'layout-start.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+{{ super() }}
+<section class="nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description" style="background-image: url('/images/Fibre-494278832-MED.jpg');">
+  <div class="nhsuk-hero__overlay">
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-hero-content" style="max-width: 700px">
+            <h1 class="nhsuk-u-margin-bottom-3">Service not available</h1>
+            <p class="nhsuk-body-l nhsuk-u-margin-bottom-0"></p>
+            <span class="nhsuk-hero__arrow" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<h2>This service is currently under maintenance</h2>
+
+
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

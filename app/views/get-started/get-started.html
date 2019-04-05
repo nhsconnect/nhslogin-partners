@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "Get started"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-u-margin-bottom-5">Get started</h1>
+
+    <h4>NHS login is currently in a private beta, during which we will be testing the onboarding process with a small number of partners to understand the timescales involved and to refine and improve the process.</h4>
+    <p>NHS login is due for public beta in March 2019.</p>
+    <hr>
+    <h2>Onboarding to NHS login</h2>
+    {{ warningCallout({
+        "heading": "Partner prioritisation",
+        "HTML": "<p>Due to the number of partners waiting to use NHS login we are having to prioritise requests to join the public beta. Prioritisation will be based on a variety of factors such as strategic fit and benefits to health and social care.</p>"
+      }) }}
+
+    <p>There are various steps to onboarding the service which include you providing usage forecasts, passing assurance standards, and determining the appropriate level of verification for your service.</p>
+    <br/>
+    {{ actionLink({
+        "text": "View a step-by-step guide to onboarding to NHS login",
+        "href": "onboarding-summary"
+      }) }}
+
+    <hr>
+
+    <h2>Exploring technical integration</h2>
+    <p>Technical teams can find step-by-step information on setting up the connection to NHS login on our <a href="">GitHub repository</a><mark>add link</mark>.</p>
+
+    <p>From the GitHub they can request access to the <a href="">Sandpit</a> which is a copy of our production code environment which will help you learn how to integrate with our service.</p>
+
+    <p>We also have a <a href="https://stub.signin.nhs.uk/client" target="blank">"stub" environment</a> which is a lightweight representation of our OpenID Connect implementation. It’s a good way to get started with the technologies you will need to use when integrating with NHS login, such as OpenID Connect and the NHS login External Interface Specification.</p>
+    
+    <p>We also have a <a href="" target="blank">Slack channel</a> <mark>add link</mark> where our NHS login developers are on hand to answer technical questions and support partner organisations.</p>
+<br/>
+<div class="nhsuk-grid-row nhsuk-promo-group">
+  <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+    <div class="nhsuk-promo">
+      <a class="nhsuk-promo__link-wrapper" href="https://www.nhs.uk" target="blank">
+        <img class="nhsuk-promo__img" src="/images/GitHub_logo.png" alt="">
+        <div class="nhsuk-promo__content">
+          <h3 class="nhsuk-promo__heading">NHS login github</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+    <div class="nhsuk-promo">
+      <a class="nhsuk-promo__link-wrapper" href="https://www.nhs.uk" target="blank">
+        <img class="nhsuk-promo__img" src="/images/document-icon.png" alt="">
+        <div class="nhsuk-promo__content">
+          <h3 class="nhsuk-promo__heading">External Interface Specification</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+    <div class="nhsuk-promo">
+      <a class="nhsuk-promo__link-wrapper" href="https://www.nhs.uk" target="blank">
+        <img class="nhsuk-promo__img" src="/images/Slack_RGB.svg" alt="">
+        <div class="nhsuk-promo__content">
+          <h3 class="nhsuk-promo__heading">Slack Support Channel</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

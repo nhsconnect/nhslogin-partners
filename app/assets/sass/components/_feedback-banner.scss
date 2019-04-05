@@ -1,0 +1,25 @@
+.feedback-survey-banner {
+    width: 100%;
+    background-color: #fdf2d6;
+
+    .rich-text {
+        max-width: 992px;
+        padding: 8px 20px;
+        margin: 0 auto;
+    }
+
+    p {
+        font-size: 14px;
+        font-size: .875rem;
+        margin: 0;
+        line-height: 24px;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    .feedback-survey-banner p {
+        line-height: 24px;
+    }
+}
+
+

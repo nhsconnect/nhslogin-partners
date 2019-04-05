@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    },
+    {
+      href: "../get-started/get-started",
+      text: "Get Started"
+    }],
+    href: "",
+    text: "Request Onboarding"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-u-margin-bottom-5">How to onboard</h1>
+    <h2>1. Request to be prioritised for onboarding</h2>
+    <p>To begin the process you must first send an onboarding request email to <a href="">engage.nhslogin@nhs.net</a></p>
+
+    <h2>2. Complete and return the ‘scoring spreadsheet’</h3>
+    <p>The scoring spreadsheet allows us to prioritise your service against others wanting to join the beta. Prioritisation will be based on a variety of factors such as strategic fit and benefits to health and social care.</p>
+
+    <h2>3. Provide usage forecasts</h2>
+    <p>Once your service has been prioritised, we will ask you to provide usage forecasts so we ensure we can meet those demands during beta.</p>
+
+    <h2>4. Complete ‘Supplier Conformance Assessment’</h2>
+    <p>We will ask you to complete a ‘Supplier Conformance Assessment’. This will confirm that you have completed a ‘Data protection impact assessment’, and are adhering to the required standards for Information Governance, Security and Clinical safety.</p>
+    <p>We’ll also require you to complete end-to-end testing in the assurance environment, including successful redirect back to the onboarding service</p>
+
+    <h2>5. Set up Support with NHS login</h2>
+    <p>NHS login is supported by the National Service Desk. You’ll need to be registered with the service desk in order to raise support tickets to us. <a href="" target="blank">Find out more here</a> <mark>add correct link</mark>.</p>
+
+    <h2>6. Sign the connection agreement</h2>
+    <p>Subject to passing the assurance standard, and successfully developing within the assurance environment, we will ask you to sign a connection agreement with NHS Digital.</p>
+
+    <h2>7. Obtain signed declarations from your end user organisations</h2>
+    <p>We’ll also require each of your end user organisations to sign a declaration.</p>
+
+    <p>Once these steps are complete you can go live.</p>
+
+    </div>
+  </div>
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

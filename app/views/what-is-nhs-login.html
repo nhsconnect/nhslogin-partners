@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "What is NHS login"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-u-margin-bottom-5">What is NHS login?</h1>
+      <h4>NHS login is a quick and secure way for users to access digital health and social care services as seamlessly as possible, whilst providing a safe way to make sure you’re giving only the right people access to your service.</h4>
+      <p>NHS login is a <strong>free service</strong>. It makes sure you’re giving the right people access without the effort and cost of developing and managing your own identity platform. </p>
+      <p>NHS login offers <a href="how-it-works/authentication-verification">different levels of verification</a> so you can choose the most appropriate for your service. User records can be created with no verification for generic NHS services and information, whereas full verification allows access to sensitive information such as medical records.</p>
+      <p>NHS login can co-exist with your own login system. It also has the facility to generate GP system linkage keys, subject to commercial agreement.</p>
+      <p>The service was released into Private Beta in September 2018 supporting NHS App, the login service’s first partner.</p>
+
+      <p>Find out <a href="how-it-works">How it works</a> or <a target="blank" href="http://nhslogin-demo.herokuapp.com/">View the prototypes</a></p>
+
+    </div>
+  </div>
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}
