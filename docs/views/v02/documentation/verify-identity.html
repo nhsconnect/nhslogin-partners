@@ -1,0 +1,54 @@
+{% extends 'v02/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "documentation"
+    }) }}  
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1>Verification of the user’s identity and association with their NHS Number</h1>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-quarter">
+    <aside class="nhsuk-related-nav" role="complementary">
+      {% include "includes/_documentation-menu.html" %}
+    </aside>
+    </div>
+  <div class="nhsuk-grid-column-three-quarters">
+    <p>If the user requires access to RP services that make use of personal information, then they must verify their identity to the level required by the RP service. The level required must be defined by the RP service provider in accordance with the standards required for verification and authentication3 as set out by NHS Digital.</p>
+
+    <p>The degree of confidence in the verification and authentication of the user that an RP service requires, and therefore levels stored within the user’s NHS login account in the parameter “Vector of Trust”, is dependent upon the sensitivity of the data to be made available by the service. For example, for the service to grant the user access to personal medical record details, the individual must have a high degree of verification recorded in their NHS login account – e.g. level P94.</p> 
+
+    <p>To verify their identity, a user can either:</p>
+
+    <ul>
+      <li>Use NHS login services to prove their identity online (referred to as the Prove Your Identity (PYI) process); or</li>
+      <li>Use NHS login services and opt to re-use their existing GP Patient OnLine linkage key information (POL)5 to prove who they are.</li>
+    </ul>
+
+    <mark>figure</mark>
+    
+    <p>Text BoxProving users’ identities using either of these methods meets the NHS Digital published standard for identity checking in health and care services. These two user journeys are described in more detail below.></p>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

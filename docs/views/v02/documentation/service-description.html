@@ -1,0 +1,61 @@
+{% extends 'v02/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "documentation"
+    }) }}  
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1>Introduction to the NHS login service</h1>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-quarter">
+  <!--<h2 class="nhsuk-related-nav__heading" id="subsection-title">Content</h2>-->
+
+    <aside class="nhsuk-related-nav" role="complementary">
+    <!--<h2 class="nhsuk-related-nav__heading" id="subsection-title">Section 1</h2>-->
+      {% include "includes/_documentation-menu.html" %}
+    </aside>
+    </div>
+  <div class="nhsuk-grid-column-three-quarters">
+  <p>The NHS login Service (the service) is a new capability delivered by NHS Digital which comprises the processes and supporting technology for people to prove who they are online.</p>
+
+  <p>The benefits of the service are:</p>
+  <ul>
+    <li>the citizen only must go through a rigorous identity verification process once, after which they can access a range of health and care websites and apps securely using a single set of login credentials; and</li>
+    <li>services that use NHS login (Reliant Party Services – RPS) are relived of the burden of verifying a user’s identity.</li>
+  </ul>
+<p>The goal of the service is to facilitate the availability of health services to citizens online as securely and seamlessly as possible. NHS login provides a foundational capability which is required for the successful expansion of digital health services, supporting an anticipated reduction in the burden on frontline services delivered by a channel shift to online provision of them.</p>
+  
+<p>NHS login comprises processes for identifying and verifying a user’s identity, and the supporting technology (NHS login System) to support both the verification stage and ongoing user account and logon services to be consumed by Reliant Party Services (RPS).</p>
+
+<p>The NHS login System is internet facing using Open ID Connect and the Oauth2.0 protocols alongside FIDO (Fast Identity Online) specifications for improving the user’s experience of accessing services.</p>
+
+<p>The service was released into Private Beta in September 2018, supporting the NHS App which is also in private beta – NHS App is the login service’s first RPS. Both NHS login and NHS App are due to enter Public Beta in March 2019.</p>
+<p>The NHS login service is capable of verifying a user’s’ identity and setting a clearly defined level of verification for their account at a level ranging from no verification to fully verified, where “fully verified” means verified with a level of confidence that satisfies NHS login, and therefore RPS’s relying on NHS login for access management , that the user can be granted access to sensitive information such as medical records.</p>
+
+<p>The remainder of this document explains the key components of the service, focusing on the technology underpinning the service, the NHS login System. Readers are also referred to the detailed <a href="https://developer.nhs.uk/library/systems/nhs-login-info-suppliers/eis">External Interface Specification (EIS)</a> for the service</p>
+  </p>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

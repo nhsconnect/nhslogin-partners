@@ -1,0 +1,46 @@
+{% extends 'v01/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "environments"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+<h1>Environments</h1>
+ <div class="nhsuk-u-reading-width">
+
+  <h2>Use our stub to learn about OpenID Connect</h2>
+  <p>Our stub is a lightweight representation of our OpenID Connect (OIDC) implementation. It is intended to provide rapid learning of how our OIDC authorization flow behaves.</p>
+  <p>You can start using this now: <a href="https://stub.signin.nhs.uk/client">https://stub.signin.nhs.uk/client</a></p>
+
+  <h2>Try out NHS login in our sandpit</h2>
+  <p>The sandpit environment will help you learn how to integrate with our service. However, it doesn't offer a full experience. The key restrictions are:</p>
+  <ul>
+    <li>It is not possible to complete submitted ID verification checks, only a basic registration</li>
+    <li>Its not connected to the Personal Demographics Service (PDS)</li>
+  </ul>
+
+  <p>You can see a development plan for the sandpit on this user story map.</p>
+  <p>Our support team can add test data to the sandpit for you - we’ll send you their details when we setup your sandpit access.</p>
+
+  <p>Here is our quick start guide to using the <a href="sandpit">sandpit.</a></p>
+
+    {{ backLink({
+        "href": "index",
+        "text": "Return to overview"
+    }) }}
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'v03a/layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "How it works"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h2>Here’s how a user creates an NHS login:</h2>
+      <ol>
+        <li><strong>User signs up to a service</strong></li>
+        <li><strong>Creates an NHS log in</strong><br />If the user does not already have an NHS login account they will be asked to:
+
+          <ul>
+            <li>set up their account by entering their email address and password.</li>
+            <li>provide a mobile phone number to which they are sent a 4-digit code which they must enter as part of the 2FA process.</li>
+            <li>accept the NHS login Service Terms and Conditions of use</li>
+          </ul>
+      
+        <br />At this point, the user will have a basic NHS login account which will allow them access to generic NHS services and information which do not contain personalised and potentially sensitive data.
+        <br />If the user requires access to services that make use of personal information, then they must verify their identity to the level required by the partner service.
+
+        <br />To verify their identity, a user can either:
+          <ul>
+            <li>Use NHS login services to prove their identity online (referred to as the Prove Your Identity (PYI) process); or</li>
+            <li>Use NHS login services and opt to re-use their existing GP Patient OnLine linkage key information (POL)5 to prove who they are.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <hr />
+
+
+      <h2>A: The PYI journey:</h2>
+
+      <ol start="3">
+        <li><strong>Enter demographic details</strong>
+        <br />Give the postcode of the GP surgery where they are registered plus either their name and date of birth or their NHS number.
+        </li>
+        <li><strong>Takes a picture of their photo ID document</strong>
+        <br />To prove their identity online (PYI) using NHS login, a user must:
+        <br />Upload a copy of a photo ID document. Admissible documents include:
+          <ul>
+            <li>UK passports</li>
+            <li>UK provisional and full driving licences</li>
+          </ul>
+        </li>
+        <li><strong>Takes a short video</strong>
+        <br />Upload a short video of themselves reading 4 randomly generated numbers out loud
+        </li>
+      </ol>
+      
+      <p>Once this information is submitted by the user, our Home Office trained ID Checkers, will verify the user’s identity. This is done by checking the ID submitted is valid, checking the user is the same person on that ID using the video they submit of themselves, and running a search, using the information provided, to find a match on the NHS Personal Demographics Service (PDS) and attaching their NHS Number to their NHS login account.</p>
+
+      <p>We aim to complete this process within 2 hours of the user uploading their information.</p>
+
+      <hr>
+
+      <h2>B: The POL journey:</h2>
+      <p>To prove their identity via the Patient Online (POL) journey, a user must use NHS login to enter:</p>
+      <ul>
+        <li>the POL Account Linkage Key/Passphrase,</li>
+        <li>Account ID and</li>
+        <li>Practice ODS code which will have been issued to the user when they first requested GP online service credentials from their GP surgery.</li>
+      </ul>
+      <p>Once this information is submitted by the user, the details are checked against the GP system. As in the PYI journey, during this process the NHS number will also be matched to the user and stored in their NHS login account.</p>
+
+      <hr>
+
+      <h2>Here’s how a user logs in using NHS login:</h2>
+      <p>Once their NHS login account has been created, the next time the user navigates to a partner service’s login page/service, they will again be offered the option of signing into the system using NHS login.</p>
+      <p>The user can enter their ID and Password plus 2FA code, unless using their device has fingerprint identification in which case they can simply use that method.</p>
+      <p>The system then ensures the user has the appropriate level of verification for the service and logs them in.</p>
+      
+      <p><a href="http://nhslogin-demo.herokuapp.com/">View the prototypes</a></p>
+
+      <hr>
+
+      <h2>Management of NHS login Accounts</h2>
+      <p>We aim to make the NHS login Service account management capabilities self-service for the user wherever possible. The Service currently includes a feature that enables users to reset their NHS login password on a self-serve basis.</p>
+      <p>Additionally, we intend to deliver the capability for users to change their email address and/or their 2FA mobile number online by our Public Beta, March 2019.</p>
+
+
+
+<mark>Add other missing parts from:</mark>
+<ul>
+<li>Account closure</li>
+<li>Logging out</li>
+<li>NHS login co-existence with a RP-specific login</li>
+<li>Data retention</li>
+<li>Support for Delegated Access</li>
+<li>Support for user account creation account through "Vouching"</li>
+<li>Providing Relying Party services with the facility to generate GP system linkage keys</li>
+<li>Governance for RPs</li>
+</ul>
+
+
+
+
+
+
+    </div>
+  </div>
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'v01/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    },{
+      href: "environments",
+      text: "environments"
+    }],
+    href: "",
+    text: "sandpit"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+<h1>How do I integrate to the sandpit?</h1>
+  <div class="nhsuk-u-reading-width">
+
+  <p>We’ll need to setup your service on NHS login sandpit. You can make a request to connect using this form <!--<a href="https://goo.gl/forms/QFphpqYyUMvNafAy2">form:</a>--><mark>link removed</mark></p>
+ 
+  <p>You’ll be asked to provide:</p>
+  <ul>
+    <li>A friendly name of your service e.g. what the public know you as</li>
+    <li>Your redirect_uri that we’ll return traffic to</li>
+    <li>Your public key for validating signed JWTs</li>
+  </ul>
+
+  <p>You will need to add an OIDC Relying Party library to your service. There are plenty (we intend to provide some guidance on specific libraries soon), some OpenID certified examples here: https://openid.net/developers/certified/</p>
+
+  <p>Depending on the library you pick you’ll either need:</p>
+  <ul>
+    <li>the configuration endpoint: https://auth.sandpit.signin.nhs.uk/.well-known/openid-configuration</li>
+    <li>or the specific endpoints, which can be found at the configuration endpoint</li>
+  </ul>
+
+    {{ backLink({
+        "href": "environments",
+        "text": "Return to environments"
+    }) }}
+
+  </div>
+
+{% endblock %}

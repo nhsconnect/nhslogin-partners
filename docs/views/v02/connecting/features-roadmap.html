@@ -1,0 +1,60 @@
+{% extends 'v02/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "features and roadmap"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+<h1>Features and Roadmap</h1>
+ <div class="nhsuk-u-reading-width">
+
+  <h2>NHS login roadmap</h2>
+  <p>Please note: As the service develops we are defining our roadmap based on research and data insights. The below features are planned, but might move around as we respond through our beta phase.</p>
+
+  <h3>JANUARY - MARCH 2019</h3>
+  <ul>
+    <li>Enable users to amend the phone number and email address linked to their account</li>
+    <li>Users will be prompted to consent to share data with services</li>
+    <li>Passwordless login for apps and devices that support biometric unlocking Automation of ID checks</li>
+    <li>Support for worldwide government issued ID documents</li>
+  </ul>
+
+  <h3>APRIL - JUNE 2019</h3>
+  <ul>
+    <li>Seemless switching between services using NHS login (single sign-on)</li>
+    <li>Delegated / Proxy access (limited trial)</li>
+    <li>Ability for users to switch between desktop and mobile devices to assist ID checks</li>
+    <li>Offline vouching and user invite to prescribed apps</li>
+  </ul>
+
+  <h3>JULY ONWARDS</h3>
+  <ul>
+    <li>Passwordless login for browser based services</li>
+    <li>Offline ID checks at locations other than GP practices</li>
+  </ul>
+
+  <hr>
+
+  <h2>Current Features</h2>
+  <p>Internet facing</p>
+
+    {{ backLink({
+        "href": "index",
+        "text": "Return to overview"
+    }) }}
+
+  </div>
+
+{% endblock %}

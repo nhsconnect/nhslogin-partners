@@ -1,0 +1,126 @@
+{% extends 'v02/layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+{{ super() }}
+<section class="nhsuk-hero">
+  <div class="nhsuk-width-container nhsuk-hero--border">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3">Ensure your service is part of the NHS digital ecosystem</h1>
+          <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">NHS login is a quick and very secure way for users to prove their identity online. It’s a safe way to make sure you’re giving the right people access.</p>
+          <br>
+          <a href="connecting/connecting" class="nhsuk-button nhsuk-button--reverse" id="get-started">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h2>Key benefits</h2>
+      <p>Benefits to your organisation</p>
+      <ul>
+        <li>Not having to build an identity platform</li>
+        <li>It's free</li>
+      </ul>
+      <p>Benefits to your users</p>
+      <ul>
+        <li>Single login to access multiple services</li>
+      </ul>
+      <p><a href="./connecting/connecting">Find out more about using NHS login</a></p>
+
+      <hr />
+
+      <div class="nhsuk-grid-row nhsuk-promo-group">
+        <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+        {{ promo({
+        "href": "documentation/service-description",
+        "heading": "Service Description",
+        "description": "Find out how NHS login works"
+        }) }}
+        </div>
+        <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+        {{ promo({
+        "href": "integrating/sandpit",
+        "heading": "Sandpit Access",
+        "description": "Connect to NHS login"
+        }) }}
+        </div>
+        <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+        {{ promo({
+        "href": "connecting/features-roadmap",
+        "heading": "Roadmap",
+        "description": "Current and future features"
+        }) }}
+        </div>
+      </div>
+
+      <hr />
+
+      <h2>How NHS login works</h2>
+      <br><iframe width="560" height="315" src="https://www.youtube.com/embed/wI-jF9zJw0c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <hr>
+
+      <h2>NHS login safety and security</h2>
+      <p>Proving users’ identities using the NHS login meets the published standard  for identity checking in health and care services.
+      <a href="https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb3051-identity-verification-and-authentication-standard-for-digital-health-and-care-services">Read about the standards on proving identity that NHS login follows.</a></p>
+      <p>NHS login stores and processes users’ personal information securely and in line with strict standards. <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/711097/guide-to-the-general-data-protection-regulation-gdpr-1-0.pdf">Read more about data storage.</a></p>
+
+      <hr>
+<!--
+      <h2>NHS login support</h2>
+      <mark>RICHARD TO CHECK THIS CONTENT</mark>
+      <p>NHS login is supported by the people who built it.
+      The NHS login team gives your service:</p>
+      <ul>
+        <li>24/7 access to support</li>
+        <li>detailed technical guidance to help you connect</li>
+        <li>99.9% service uptime (is this right)</li>
+      </ul>
+    </div>
+  </div>
+-->
+
+<!--
+<h2>Tried and trusted</h2>
+<p>You do not need to build your own digital identity check from scratch or go through a long procurement process. 
+NHS login has been designed and tested by NHS Digital and it’s already being used by the NHS App. Many other health websites and apps are going through the process of being connected to NHS login or have requested connection.</p>
+<mark>More than xxxx users are using NHS login to access the NHS App and services run by organisations including etc etc</mark>
+<mark>Pull out quote from case study/s (NHS App) on the benefits of using NHS login/ease connecting to it.</mark>
+<a href="">Email us if you’d like to know more about using NHS login.</a>
+-->
+
+<!--
+<h2>Case Studies</h2>
+<p>NHS App</p>
+-->
+
+<!--
+<h2>Events</h2>
+<p>do to</p>
+-->
+
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

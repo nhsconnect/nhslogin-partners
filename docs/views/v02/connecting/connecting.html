@@ -1,0 +1,52 @@
+{% extends 'v02/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "explore"
+    }) }}  
+{% endblock %}
+
+
+{% block content %}
+
+    <h1>Explore NHS login</h1>
+
+  <div class="nhsuk-u-reading-width">
+    
+    <h2>Is it right for your service?</h2>
+    <p><a href="../index">Find out how NHS login works</a> and whether it's <a href="is-it-right">right for your service</a> with our <a href="features-roadmap">current features</a>.
+    
+    <p>For new functionality take a look at our <a href="features-roadmap">roadmap.</a></p>
+    <p>Join our <a href="mailto:engage.nhslogin@nhs.net?subject=Join Mailing List">mailing list</a> to get involved with NHS login. If you can't find an answer then feel free to <a href="mailto:engage.nhslogin@nhs.net?subject=Question about NHS login">drop a message to our mailbox.</a></p>
+    
+    <h2>Explore the technology</h2>
+    <p>Try our <a href="http://nhslogin-demo.herokuapp.com/instructions">prototypes</a> and <a href="../integrating/environments">stub environment</a> straight away, there's no sign up required.</p>
+    <p>For details on how to connect then have a look at our <a href="../documentation/service-description">service description</a> and <a href="https://developer.nhs.uk/library/systems/nhs-login-info-suppliers/eis/">External Interface Specification</a>
+    <p>To further develop your service then request access to our <a href="../integrating/environments#sandpit">sandpit environment.</a>
+
+    <h2>Request onboarding</h2>
+    <h3>How long is the onboarding process?</h3>
+    <p>We are currently in a private beta, during this period we will be testing the onboarding process with a small number of partners to understand the timescales involved.</p>
+    <h3>How does prioritisation work?</h3>
+    <p>Due to the number of partners waiting to use NHS login we need have a process for prioritising. Prioritisation will be based on a variety of factors such as strategic fit and benefits to health and social care.</p>
+    <p><a class="nhsuk-button button" href="mailto:engage.nhslogin@nhs.net?subject=Request Onboarding">Start onboarding process</a></p>
+    <!--<p><button class="nhsuk-button button">Start onboarding process</button></p>-->
+
+    {{ backLink({
+        "href": "../index",
+        "text": "Return to overview"
+    }) }}
+
+  </div>
+
+{% endblock %}

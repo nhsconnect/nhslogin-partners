@@ -11,7 +11,7 @@
       items: [
     {
       href: "../index",
-      text: "home"
+      text: "Home"
     },
     {
       href: "../how-it-works",
@@ -33,12 +33,11 @@
         <li>Verification - we currently offer two ‘User Identity Proofing Levels’ (P0 and P9) but we will be supporting a wider variety in future.</li>
         <li>Authentication - we currently support three ‘User Authentication Context Classes’ but as with the Identity Proofing Levels, the intention is to expand the classes that we support.</li>
       </ol>
-      <hr>     
+           
       <h2>User Identity Verification Proofing Levels</h2>
 
       <p>At this time we support the following:</p>
 
-      <mark>tables may need to go full width<mark>
 
 <div class="nhsuk-table-responsive">
   <table class="nhsuk-table">
@@ -69,7 +68,6 @@
 </div>
    
       <p>When requesting the User Identity Verification Proofing Level this represents the minimum verification level that your service is willing to accept.</p>
-      <hr>
       <h2>User Authentication Context Classes</h2>
 
       <p>At this time we support the following:</p>
@@ -109,8 +107,8 @@
   </table>
 </div>
 
-      <hr>
-      <h2>Vectors of Trust</h2>
+      
+      <h2 id="vot">Vectors of Trust</h2>
       <p>You will need to determine the ‘Vector of Trust’ for your service. This is the minimum level of user verification (Proofing level + Authentication Context Class(es)) that you should be willing to accept before providing a user with access to your service.</p>
 
       <p>This approach provides you with a choice that delivers the most appropriate combination for your service.</p> 
@@ -142,16 +140,5 @@
       
     </div>
   </div>
-{% block pageScripts %}
-<script>
-document.getElementById('get-started').addEventListener('click', function() {
-  console.log('clicked it!');
-
-});
-
-//console.log(getStarted);
-</script>
-{% endblock %}
-
 
 {% endblock %}

@@ -72,7 +72,7 @@
       </div>
       <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
         {{ promo({
-        "href": "get-started/get-started",
+        "href": "onboarding/get-started",
         "heading": "Get started",
         "description": "View a step-by-step guide to onboarding to NHS login, and request access to the NHS login Sandpit"
         }) }}
@@ -96,23 +96,11 @@
 
         <div class="nhsuk-grid-column-one-half">
           <h2>Get in touch</h2>
-          <p>If you can't find an answer then feel free to <a href="">drop a message to our mailbox</a> or join the NHS login Slack channel</p>
-          <p>The project team also produces a weekly newsletter so please join our mailing list for the latest NHS login updates.</p>
+          <p>If you can't find an answer then feel free to <a href="mailto:engage.nhslogin@nhs.net">drop a message to our mailbox</a> or <a href="https://nhs-login-support-slack-invite.herokuapp.com/" target="blank">join the NHS login Slack channel</a></p>
+          <p>The project team also produces a weekly newsletter so please <a href="mailto:engage.nhslogin@nhs.netsubject=join nhs login mailing list">join our mailing list</a> for the latest NHS login updates.</p>
         </div>
       </div>
     </div>
   </section>
-
-{% block pageScripts %}
-<script>
-document.getElementById('get-started').addEventListener('click', function() {
-  console.log('clicked it!');
-
-});
-
-//console.log(getStarted);
-</script>
-{% endblock %}
-
 
 {% endblock %}

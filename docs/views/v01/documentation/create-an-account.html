@@ -1,0 +1,52 @@
+{% extends 'v01/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "documentation"
+    }) }}  
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1>Creating an NHS login account 
+</h1>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-quarter">
+    <aside class="nhsuk-related-nav" role="complementary">
+      {% include "includes/_documentation-menu.html" %}
+    </aside>
+    </div>
+  <div class="nhsuk-grid-column-three-quarters">
+  
+<p>The creation of an NHS login account is predominantly an online journey for the end user comprising three key stages.</p>
+<ol>
+  <li>Set up of the NHS login account</li>
+  <li>Verification of the user’s identity and association with their NHS Number</li>
+  <li>Authenticate user/ send data to the service</li>
+</ol>
+
+
+<mark>figure</mark> 
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}

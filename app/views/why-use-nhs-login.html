@@ -11,7 +11,7 @@
       items: [
     {
       href: "../index",
-      text: "home"
+      text: "Home"
     }],
     href: "",
     text: "Why use NHS login?"
@@ -25,7 +25,7 @@
       <p>If you’re building a health or social care app or website for patients, NHS login is a free, flexible solution which can take away the headache of creating an account for a user, verifying the user’s identity, and linking it to their NHS number.</p>
     </div>
 
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
       <div class="nhsuk-grid-column-one-half">
         {{ panel({
           "label": "Benefits to your <strong>users</strong>",
@@ -53,7 +53,7 @@
       </ul>
 
       <p>The team behind NHS login work in a user-centred, agile way. As such, the service will be continually improved via iterative releases that have been validated via user research and testing.</p>
-      <p>View more information on <a href="get-started/get-started">how to onboard</a>, or <a href="get-started/technical">investigate technical integration</a><mark>update link</mark></p>
+      <p>View more information on <a href="onboarding/get-started">how to onboard</a>, or <a href="https://github.com/nhsconnect/nhslogin" target="blank">investigate technical integration</a></p>
 
       {{ warningCallout({
         "heading": "Just so you know…",
@@ -72,21 +72,10 @@
       
       {{ actionLink({
         "text": "View the currently available features and roadmap",
-        "href": "features"
+        "href": "features-and-roadmap"
       }) }}
 
     </div>
   </div>
-{% block pageScripts %}
-<script>
-document.getElementById('get-started').addEventListener('click', function() {
-  console.log('clicked it!');
-
-});
-
-//console.log(getStarted);
-</script>
-{% endblock %}
-
 
 {% endblock %}

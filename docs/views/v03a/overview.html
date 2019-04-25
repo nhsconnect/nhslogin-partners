@@ -1,0 +1,76 @@
+{% extends 'v03a/layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "Overview"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h2>What is it?</h2>
+      <p>NHS login is a quick and secure way for users to prove their identity online, allowing them to access digital health and social care services as seamlessly as possible. This will help reduce the burden on frontline services and reduce costs for the NHS.</p>
+      <p>NHS login is a free service. It makes sure you’re giving the right people access without the burden and cost of developing and managing your own identity platform.</p>
+      <p>NHS login offers different levels of verification so you can choose the most appropriate for your service. Full verification allows access to sensitive information such as medical records.</p>
+      <p>The service was released into Private Beta in September 2018. NHS App is the login service’s first partner. NHS login is due to enter Public Beta in March 2019.</p>
+
+      <p><a href="how-it-works">Find out How it works</a>
+      <a href="http://nhslogin-demo.herokuapp.com/">View the prototypes</a></p>
+
+      <hr />
+
+      <h2>Is it right for your service?</h2>
+      <p>NHS login is designed and funded for Health and Social Care services.</p>
+
+      <p>If your service aligns to NHS strategy and delivers benefits to the NHS and social care ecosystem you can use NHS login to check a user’s identity.</p>
+
+      <p>Your service might need to do this if it:</p>
+      <ul>
+        <li>shows a user personal information about themselves, such as their medical records</li>
+        <li>replaces a form that needs to be physically signed by a user</li>
+        <li><mark>Example 3</mark></li>
+      </ul>
+
+      <p><a href="features">View the currently available features and roadmap</a></p>
+
+      <hr>
+
+      <h2>Just so you know…</h2>
+      <ul>
+        <li>NHS login is currently only available for services in England and links users to their NHS number</li>
+        <li>Clinical authorisation remains the responsibility of the partner service.</li>
+        <li>Your service and organisation will need to meet our assurance requirements and sign our contract.</li>
+      </ul>
+      <p><mark>@helen to provide list of service constraints (Mobile/phone/lack of document)</mark></p>
+
+      <p><a href="get-started/get-started">View more information on how to onboard</a>
+      <a href="https://developer.nhs.uk/library/systems/nhs-login-info-suppliers/eis/">investigate technical integration</a></p>
+    </div>
+  </div>
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

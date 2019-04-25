@@ -1,0 +1,50 @@
+{% extends 'v02/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "documentation"
+    }) }}  
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1>Set up the NHS login account</h1>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-quarter">
+    <aside class="nhsuk-related-nav" role="complementary">
+      {% include "includes/_documentation-menu.html" %}
+    </aside>
+    </div>
+  <div class="nhsuk-grid-column-three-quarters">
+  <p>The user (citizen) arrives at the NHS login initial screen after being re-directed to it by an RP service that offers the option to use NHS login to access their system, similar to the way in which some systems allow users to logon using their Google or Facebook account credentials.</p>
+
+  <p>If the user chooses the “Login using your NHS login account” option, they will be able to login as described in Section 3 of this document.</p>
+
+  <p>However, if the user does not already have an NHS login account, they will be presented with the option to create one as follows:</p>
+
+  <p>The user will be asked to set up their account by entering a username (their email address) and password. They are then required to provide a mobile phone number and are sent a 4-digit code which they must enter as part of the 2FA process2. They will also be asked to accept the NHS login Service Terms and Conditions of use (T&C’s).</p> 
+
+  <p>At this point, the user will have a basic NHS login account which will allow them access to generic NHS services and information which does not contain personalised and potentially sensitive data. Their account, at this stage, has a “non-verified” – P0 status.</p>
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'v02/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "documentation"
+    }) }}  
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1>Authenticate user/ send data to the service</h1>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-quarter">
+    <aside class="nhsuk-related-nav" role="complementary">
+      {% include "includes/_documentation-menu.html" %}
+    </aside>
+    </div>
+  <div class="nhsuk-grid-column-three-quarters">
+  
+  <p>On completion of the verification process using either of the two journeys available, the user’s account is now ready to be used to authenticate them each time they wish to use an RP service and exchange data with the RP in line with the verification level required.  If they used the POL route to verification, it is possible for the user to continue their session immediately after verification and access the RP without logging into NHS login again. If they have used the PYI route they will need to log in to the RP by re-entering their NHS login credentials again as described further in Section 3. <mark>amend reference</mark></p>
+
+
+
+
+  </div>
+  
+</div>
+
+{% endblock %}

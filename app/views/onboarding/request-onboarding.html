@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "Home"
+    },
+    {
+      href: "../onboarding/get-started",
+      text: "Get Started"
+    }],
+    href: "",
+    text: "Request Onboarding"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-u-margin-bottom-5">How to get NHS login</h1>
+    <!--<h2>1. Request to be prioritised for onboarding</h2>
+    <p>To begin the process you must first send an onboarding request email to <a href="mailto:engage.nhslogin@nhs.net">engage.nhslogin@nhs.net</a></p>
+-->
+    <h2>1. Complete the ‘scoring spreadsheet’</h3>
+    <p>The scoring spreadsheet allows us to prioritise your service against others wanting to join the beta. Prioritisation will be based on a variety of factors such as strategic fit and benefits to health and social care.</p>
+    <p>Download Scoring Sreadsheet <a href="">XLS</a> <a href="">ODF</a></p>
+
+    <h2>2. Request to be prioritised for onboarding</h2>
+    <p>To begin the process you must first send an onboarding request email to <a href="mailto:engage.nhslogin@nhs.net">engage.nhslogin@nhs.net</a> with a <strong>completed 'scoring spreadsheet'</strong></p>
+    
+    <h2>3. We’ll hold a kick-off session</h2>
+    <p>We’ll contact you to book a ‘kick-off’ session. In this session, we’ll cover in more detail what’s involved in the process, what’s required of your organisation, and map out and agree the timeline and key dates of your onboarding journey.</p>
+
+    <h2>4. Provide usage forecasts</h2>
+    <p>Once your service has been prioritised, we will ask you to provide usage forecasts so we ensure we can meet those demands during beta.</p>
+    <p>Download usage forecasts <a href="">XLS</a> <a href="">ODF</a></p>
+
+    <h2>5. Complete ‘Supplier Conformance Assessment’</h2>
+    <p>We will ask you to complete a ‘Supplier Conformance Assessment’. This will confirm that you have completed a ‘Data protection impact assessment’, and are adhering to the required standards for Information Governance, Security and Clinical safety.</p>
+    <p>We’ll also require you to complete end-to-end testing in the assurance environment, including successful redirect back to the onboarding service</p>
+    <p>Download Supplier comformance assessment <a href="">DOC</a> <a href="">PDF</a></p>
+
+    <h2>6. Set up Support with NHS login</h2>
+    <p>NHS login is supported by the National Service Desk. You’ll need to be registered with the service desk in order to raise support tickets to us. <!--<a href="">Find out more here</a>.--></p>
+
+    <h2>7. Sign the connection agreement</h2>
+    <p>Subject to passing the Supplier Conformance Assessment, we will ask you to sign a connection agreement with NHS Digital.</p>
+    <p>Download connection agreement <a href="">DOC</a> <a href="">PDF</a></p>
+
+    <h2>8. Obtain signed declarations from your end user organisations</h2>
+    <p>We’ll also require each of your end user organisations to sign a declaration.</p>
+
+    <p>Once these steps are complete you can go live.</p>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

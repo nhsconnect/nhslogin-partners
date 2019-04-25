@@ -1,0 +1,54 @@
+{% extends 'layout-start.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+{% block header %}
+{{ super() }}
+<section class="nhsuk-hero">
+  <div class="nhsuk-width-container nhsuk-hero--border">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3">NHS login - Self Service Prototypes</h1>
+          <br>
+          <a href="docs/v03a/index" class="nhsuk-button nhsuk-button--reverse" id="get-started">Latest Version - safe</a><br />
+          <a href="index" class="nhsuk-button nhsuk-button--reverse" id="get-started">Latest Version - alternative</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h2>Older Versions</h2>
+      <p><a href="docs/v03a/index">version 0.3a</a></p>
+      <p>Iteration 3a - safe version</p>
+      <hr />
+      <p><a href="docs/v02/index">version 0.2</a></p>
+      <p>Iteration 2 of verify version</p>
+      <hr />
+      <p><a href="docs/v01/index">version 0.1</a></p>
+      <p>Initial version, based on Verify onboarding solution</p>
+      <hr />
+  </div>
+
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

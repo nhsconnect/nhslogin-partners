@@ -1,0 +1,65 @@
+{% extends 'v01/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "Develop and Assure you service"
+    }) }}  
+{% endblock %}
+
+
+{% block content %}
+
+    <h1>Develop and Assure your service</h1>
+
+    <div class="nhsuk-u-reading-width">
+
+    <h2>1. Determine the LOA that’s needed for your service</h2>
+    <p><mark>What do we say about LOA</mark></p>
+ 
+    <h2>2. Complete your development & add our buttons to your site or app</h2>
+    <p><mark>What content do you want here?</mark></p>
+ 
+    <h2>3. Forecasting</h2>
+    <p>We need forecasts to help us plan.  Please complete the forecasting template for each service you wish to connect with us.  How long will this go on for?/ (Can we put this in the SCAL?)</p>
+
+    <h2>4. Complete the assurance paperwork & set up support arrangements</h2>
+    <p>We have started the journey to standardise the way we assure partners across NHS digital. The aim is to reduce the duplication but we’re not there yet. You will need to complete our assurance process in order to use the service. You’ll need to complete the assurance documentation <mark>link to SCAL</mark>. This means you’ll need to review the NHS login Hazard Log and Safety Case. You’ll also need to have a recent Data Security and Protection Toolkit at the time you go live.</p>
+    <p>If you are new to working with NHS Digital you will need support arrangements set up.  We’ll offer early life support <mark>how much and for how long?</mark>  Your ongoing support will be via a help desk to help desk model.</p>
+    <p><mark>Open point - we don’t know how many clients we should set up yet to serve each organisation</mark></p>
+
+    <h2>5. Test in the Integration Environment</h2>
+    <h3>Gain access to the integration environment.</h3>
+    <p>Complete this form so that we can set you up wth a client in the integration environment. It will be connected to a test instance of PDS.</p>
+    <mark>Can you re-use public keys across the sandpit to assurance</mark>
+    <h3>End to End Testing</h3>
+    <p>We will need to see an end-to-end transaction completed in the test environment to ensure you have integrated successfully.  However its sensible to test a set of scenarios including failures. On completion of the test we’ll issue you with a test certificate.</p>
+
+    <h2>6. Sign the contract</h2>
+    <p>You’ll need to sign a contract in order to go live on our service. You will also need to ensure that any organisations that deploy your service sign our End User Agreement. <mark>The contracting arrangement may be different if you are already using another NHS digital API  - AP get confirmation</mark></p>
+
+    <h2>7. Go Live</h2>
+    <p>The final step is for you to be set up in the production environment.   Complete this form to set up your service in the production environment. Remember you’ll need a separate public key.</p>
+
+    <h2>8. Live Support</h2>
+    <p>You will be provided with additional early life support to ensure you’ve integrated successfully as part of the beta. <mark>More info needed here</mark>.</p>
+
+<!--    <p><button class="nhsuk-button button">Start onboarding process</button></p>  -->
+
+    {{ backLink({
+        "href": "../index",
+        "text": "Return to overview"
+    }) }}
+
+  </div>
+
+{% endblock %}

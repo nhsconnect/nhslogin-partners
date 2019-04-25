@@ -1,0 +1,66 @@
+{% extends 'v02/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "documentation"
+    }) }} 
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1>The user now has an account – how do they use it to access my service?</h1>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-quarter">
+    <aside class="nhsuk-related-nav" role="complementary">
+      {% include "includes/_documentation-menu.html" %}
+    </aside>
+    </div>
+  <div class="nhsuk-grid-column-three-quarters">
+
+  <p>Once their NHS login account has been created, the next time the user navigates to an RP service’s login page/service, they will again be offered the option of signing into the system using NHS login.</p>
+
+ 
+
+  <p>Choosing to login using NHS login will result in the RP (client) system redirecting the user to NHS login and the RP system also preparing an Authorisation Request for consumption by NHS login which, amongst other things (see EIS for full description), will define the level of verification that the user is expected to have in order to access that RP system.</p>
+
+ 
+
+<p>On this occasion (having created their account as described in Section 2), the user can enter their ID and Password plus 2FA code, unless using FIDO for finger print identification in which case they can simply use that method.</p>
+
+ 
+
+<p>Once the user has successfully identified themselves with their NHS login account, their current level of verification is checked against that stated as required by the RP system within the Authorisation Request submitted. If the verification level check is successful, then login can continue. If not, then the user will be requested to enhance their current level of verification using either the PYI or POL routes as described in Section 2.2 above and, for the time being, denied access to the RP system.</p>
+
+ 
+
+<p>The flow for the core process of logging into an RP using NHS login from a high-level technical point of view is presented in the diagram overleaf. (Diagram 2). A detailed description of the contents of the tokens and associated calls is provided in the EIS.</p>
+
+ 
+
+<p>Provided the user has been verified to the required level, then the RP will have the ability to retrieve the information stored within the NHS login service itself (i.e. within the database managed within NHS login) and that which the NHS login service can provide using calls to other NHS services.</p>
+
+ 
+
+<p>The scope of information available to RP services that use NHS login, via NHS login’s “UserInfo endpoint”, is likely to widen in the future, subject to appropriate authorisation from the relevant professional bodies, helping NHS login and partner RP services release the huge potential for digital Health & Care related services to the public.</p>
+
+<mark>figure</mark>
+  </div>
+  
+</div>
+
+{% endblock %}

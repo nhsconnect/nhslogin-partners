@@ -1,0 +1,51 @@
+{% extends 'v02/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "connecting"
+    }) }}  
+{% endblock %}
+
+
+{% block content %}
+
+    <h1>Connecting to NHS login</h1>
+
+  <div class="nhsuk-u-reading-width">
+    
+    <h2>1. Check if you need NHS login</h2>
+    <p>Add content here</p>
+
+    <h2>2. What you need to do</h2>
+    <p>Add content here</p>
+
+    <h2>3. Adding NHS login to your service</h2>
+    <p>Add content here</p>
+
+    <h2>4. Getting confirmation to use NHS login</h2>
+    <p>Add content here</p>
+
+    <h2>5. All the legal stuff</h2>
+    <p>Add content here</p>
+
+    <h2>6. Going Live</h2>
+    <p>Add content here</p>
+
+    {{ backLink({
+        "href": "../index",
+        "text": "Return to overview"
+    }) }}
+
+  </div>
+
+{% endblock %}

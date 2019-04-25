@@ -11,7 +11,7 @@
       items: [
     {
       href: "../index",
-      text: "home"
+      text: "Home"
     }],
     href: "",
     text: "How it works"
@@ -23,8 +23,6 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-u-margin-bottom-5">How it works
-      <span>v0</span>
-      <span><a href="how-it-works-1">v1</a></span>
       </h1>
       <p>NHS login is an internet facing system for identifying and verifying a user’s identity.</p>
       <p>It uses the <a target="blank" href="https://openid.net/developers/specs/">Open ID Connect</a> and the <a target="blank" href="https://oauth.net/2/">Oauth2.0</a> protocols. It also uses <a target="blank" href="https://fidoalliance.org/specifications/">FIDO (Fast Identity Online) specifications</a>  which improves the user’s experience by allowing Fingerprint ID and Face ID to seamlessly access native apps.</p>
@@ -58,6 +56,7 @@
         <div class='videoWrapper'>
         <iframe width='560' height='315' src='https://www.youtube.com/embed/wI-jF9zJw0c' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
       </div>
+      <br />
       <ol>
         <li><strong>User signs up to a service</strong></li>
         <li><strong>Creates an NHS log in</strong>
@@ -74,8 +73,8 @@
 
         <p>To verify their identity, a user can either:</p>
           <ul>
-            <li>A. Use NHS login services to <a href=''>prove their identity online</a></li>
-            <li>B. Use NHS login services and opt to re-use their existing <a href=''>GP Patient OnLine</a> linkage key information to prove who they are.</li>
+            <li>A. Use NHS login services to prove their identity online</li>
+            <li>B. Use NHS login services and opt to re-use their existing GP Patient OnLine linkage key information to prove who they are.</li>
           </ul>
     
       "
@@ -138,11 +137,7 @@
         <p>Once their NHS login account has been created, the next time the user navigates to a partner service’s login page, they will again be offered the option of signing into the system using NHS login.</p>
         <p>The user can enter their ID and Password plus 2FA code. You can also implement fingerprint or Face ID if your service is an app.</p>
         <p>The system then ensures the user has the appropriate level of verification for the service and logs them in.</p>
-       <mark> {{ actionLink({
-        'text': 'View the prototypes',
-        'href': 'http://nhslogin-demo.herokuapp.com/',
-        'openInNewWindow': 'true'
-      }) }} </mark>
+        <p><a href='http://nhslogin-demo.herokuapp.com/' target='blank'>View the prototypes</a></p>
       "
       }) }}
 
@@ -159,7 +154,7 @@
         "classes": "nhsuk-expander",
         "text": "Account closure",
         "HTML": "
-       <p>NHS login has a process to automatically remove unused accounts. Currently, if your users wish to proactively remove their account, you can raise this to us via a <a href='' target='blank'>support ticket</a><mark>needs the right link</mark>.</p>
+       <p>NHS login has a process to automatically remove unused accounts. Currently, if your users wish to proactively remove their account, you can raise this to us via a support ticket.</p>
       <p>In line with our self-service ethos, we intend to revisit the potential for introducing enhanced capability as we progress through our scheduled Public Beta.</p>
       "
       }) }}
@@ -175,16 +170,5 @@
       </div>
     </div>
   </div>
-{% block pageScripts %}
-<script>
-document.getElementById('get-started').addEventListener('click', function() {
-  console.log('clicked it!');
-
-});
-
-//console.log(getStarted);
-</script>
-{% endblock %}
-
 
 {% endblock %}

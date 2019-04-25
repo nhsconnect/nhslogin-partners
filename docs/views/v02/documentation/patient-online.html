@@ -1,0 +1,45 @@
+{% extends 'v02/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "documentation"
+    }) }}  
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1>Use Patient OnLine (POL) Linkage Key information to prove your identity</h1>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-quarter">
+    <aside class="nhsuk-related-nav" role="complementary">
+      {% include "includes/_documentation-menu.html" %}
+    </aside>
+    </div>
+  <div class="nhsuk-grid-column-three-quarters">
+
+  <p>To prove their identity via the Patient Online (POL) journey, a user must use NHS login to enter the POL Account Linkage Key/Passphrase, Account ID and Practice ODS code which will have been issued to the user when they first requested GP online service credentials from their GP surgery.</p>
+
+  <mark>figure</mark>
+
+  <p>Once this information is submitted by the user, the details are checked against the GP system. As in the PYI journey, during this process the NHS number will also be matched to the user and stored in their NHS login account.</p>
+
+  </div>
+  
+</div>
+
+{% endblock %}

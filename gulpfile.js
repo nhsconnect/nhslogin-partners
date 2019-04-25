@@ -7,8 +7,11 @@ const browserSync = require('browser-sync');
 const clean = require('gulp-clean');
 const sass = require('gulp-sass');
 const nodemon = require('gulp-nodemon');
-const htmlmin = require('gulp-htmlmin');
-const nunjucksRender = require('gulp-nunjucks-render');
+// const htmlmin = require('gulp-htmlmin');
+// const nunjucksRender = require('gulp-nunjucks-render');
+// const replace = require('gulp-string-replace');
+// const notify = require('gulp-notify');
+// const debug = require('gulp-debug');
 
 // Local dependencies
 const config = require('./app/config');
@@ -56,30 +59,16 @@ function compileImages() {
 }
 
 // Clean the components folder
-function cleanComponents() {
-  return gulp.src('app/components', { allowEmpty: true})
-  .pipe(clean());
-}
+//function cleanComponents() {
+//  return gulp.src('app/components', { allowEmpty: true})
+//  .pipe(clean());
+//}
 
 // copy the components from nhsuk-frontend
-function copyComponents() {
-  return gulp.src('node_modules/nhsuk-frontend/packages/components/**/*')
-        .pipe(gulp.dest('app/components'));
-}
-
-// Compile HTML
-function compileHTML() {
-  return gulp.src('app/views/**/*.+(html|nunjucks)')
-    .pipe(nunjucksRender({
-      path: ['app/views', 'app/components']
-    }))
-    .pipe(htmlmin(
-      {
-        collapseWhitespace: true,
-        removeComments: true
-      }))
-    .pipe(gulp.dest('public'))
-}
+//function copyComponents() {
+//  return gulp.src('node_modules/nhsuk-frontend/packages/components/**/*')
+//        .pipe(gulp.dest('app/components'));
+//}
 
 // Start nodemon
 function startNodemon(done) {
@@ -145,8 +134,7 @@ exports.cleanPublic = cleanPublic;
 
 gulp.task('clean', gulp.series(cleanPublic));
 //gulp.task('HTML', gulp.series(copyComponents, compileHTML));
-
-gulp.task('public', gulp.series(cleanComponents, copyComponents, cleanPublic, compileScripts, compileImages, compileStyles, compileHTML, cleanComponents));
-
+// gulp.task('public', gulp.series(cleanComponents, copyComponents, cleanPublic, compileScripts, compileImages, compileStyles, compileHTML, cleanComponents));
+// gulp.task('replace', gulp.series(replaceURLS));
 gulp.task('build', gulp.series(cleanPublic, compileStyles, compileScripts, compileImages));
 gulp.task('default', gulp.series(startNodemon, startBrowserSync, watch));

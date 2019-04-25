@@ -1,0 +1,56 @@
+{% extends 'v03a/layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "Get Started"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+    <p><mark>Hub page which splits the ‘onboarding journey’ to Business and Technical</mark></p>
+    
+    <h2>Onboarding summary</h2>
+    <ul>
+      <li>Beta</li>
+      <li>Priority explained</li>
+    </ul>
+    <a href="onboarding-summary">business route</a>
+    <hr>
+
+    <h2>Technical explore summary</h2>
+    <ul>
+      <li>Stub</li>
+      <li>Sandpit</li>
+      <li>Assurance</li>
+    </ul>
+    <a href="technical">Technical route</a>
+    </div>
+  </div>
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

@@ -1,0 +1,167 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+{{ super() }}
+<section class="nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description" style="background-image: url('/images/Fibre-494278832-MED.jpg');">
+  <div class="nhsuk-hero__overlay">
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-hero-content" style="max-width: 700px">
+            <h1 class="nhsuk-u-margin-bottom-3">NHS login is a quick, free, and secure way of identifying and verifying who a user is.</h1>
+            <p class="nhsuk-body-l nhsuk-u-margin-bottom-0"></p>
+            <span class="nhsuk-hero__arrow" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<style>
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <p>It allows users to access digital health and social care services as seamlessly as possible, whilst providing a safe way to make sure you’re giving only the right people access to your service.</p>
+      <div class="videoWrapper">
+        <iframe  width="100%" src="https://www.youtube.com/embed/aY9qGebzKww" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <br /></br />
+
+      {{ actionLink({
+        "text": "Find out more about NHS login",
+        "href": "overview"
+      }) }}
+
+      <hr>
+
+      </div>
+      
+      <div class="nhsuk-grid-column-full">
+
+      <h2>Why use NHS login?</h2>
+      <p>If you’re building a health or social care app or website for patients, NHS login is a free, flexible solution which can take away the headache of creating an account for a user, verifying the users’ identity and linking it to an NHS number.</p>
+      </div>
+    </div>
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-one-half">
+        {{ panel({
+          "label": "Benefits to your <strong>users</strong>",
+          "HTML": "<ul><li>One-time simple Sign-up process</li><li>Single login to access multiple Health and Social care services</li><li>Peace of mind that their data is secure</li></ul>"
+        }) }}
+    </div>
+    <div class="nhsuk-grid-column-one-half">
+      {{ panel({
+        "label": "Benefits to your <strong>organisation</strong>",
+        "HTML": "<ul><li>Being sure your users are who they say they are</li><li>Not having to build and manage an identity platform</li><li>Choose a level of user verification appropriate to your service</li></ul>"
+      }) }}
+    </div>
+    
+    <div class="nhsuk-grid-column-full">
+      {{ actionLink({
+        "text": "Find out if NHS login is right for your service",
+        "href": "overview"
+      }) }}
+    </div>
+    <div class="nhsuk-grid-column-full">
+      <hr>
+
+      <h2>How it works</h2>
+      <p>NHS login is an internet facing system for identifying and verifying a user’s identity, which uses the <a target="blank" href="https://openid.net/developers/specs/">Open ID Connect</a> and the <a target="blank" href="https://oauth.net/2/">Oauth2.0 protocols</a>.</p>
+
+      <p>It also uses <a target="blank" href="https://fidoalliance.org/specifications/">FIDO (Fast Identity Online) specifications</a> which improve the user experience by allowing Fingerprint ID and Face ID to seamlessly access native apps.</p>
+
+      {{ actionLink({
+        "text": "Find out more about how NHS login works",
+        "href": "how-it-works"
+      }) }}
+
+      {{ actionLink({
+        "text": "View the prototypes",
+        "href": "http://nhslogin-demo.herokuapp.com/",
+        "openInNewWindow": "true"
+      }) }}
+
+      <hr>
+
+      <h2>Safety and security</h2>
+      <p>Proving users’ identities using the NHS login meets the published standard for identity checking in health and care services. <a target="blank" href="https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb3051-identity-verification-and-authentication-standard-for-digital-health-and-care-services">Read about the standards on proving identity that NHS login follows.</a></p>
+      <p>NHS login stores and processes users’ personal information securely and in line with strict standards. <a target="blank" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/711097/guide-to-the-general-data-protection-regulation-gdpr-1-0.pdf">Read more about data storage.</a></p>
+
+      <hr>
+
+      <h2>Get started</h2>
+      <p>NHS login is currently in a private beta.</p>
+      <p>Due to the number of partners waiting to use NHS login we are having to prioritise requests to join the public beta. Prioritisation will be based on a variety of factors such as strategic fit and benefits to health and social care.</p>
+      </div>
+      </div>
+      <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-one-half">
+      
+      <h3>Onboarding to NHS login</h3>
+      <p>There are various steps to onboarding the service which include you providing usage forecasts, passing assurance standards, and determining the appropriate level of verification for your service.</p>
+      
+      {{ actionLink({
+        "text": "View a step-by-step guide to onboarding to NHS login",
+        "href": "onboarding/onboarding-summary"
+      }) }}
+      
+      </div>
+      <div class="nhsuk-grid-column-one-half">
+      <h3>Exploring technical integration</h3>
+      <p>The NHS login GitHub is the home to all technical information on how to set up a connection to the service. There’s also a Sandpit environment to test integration.</p>
+
+      <p>In our Slack channel, our NHS login developers can answer technical questions and support partner organisations.</p>
+      <p><a target="blank" href="">Visit the NHS login GitHub repository</a></p>
+      <p><a target="blank" href="">Join the NHS login Slack</a></p>
+
+</div>
+</div>
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+
+      <hr>
+
+      <h2>Get in touch</h2>
+      <p>If you can't find an answer then feel free to <a href="">drop a message to our mailbox</a> or <a target="blank" href="">join the NHS login Slack channel</a></p>
+
+      <p>The project team also produces a weekly newsletter so please <a href="">join our mailing list</a> for the latest NHS login updates.</p>
+
+
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'v02/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "documentation"
+    }) }}  
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1>Prove Your Identity (PYI) via NHS login processes</h1>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-quarter">
+    <aside class="nhsuk-related-nav" role="complementary">
+      {% include "includes/_documentation-menu.html" %}
+    </aside>
+    </div>
+  <div class="nhsuk-grid-column-three-quarters">
+
+  <p>To prove their identity online (PYI) using NHS login, a user must:</p>
+  <ul>
+    <li>Upload a copy of a photo ID document. Admissible documents include:
+      <ul>
+        <li>UK passports</li>
+        <li>UK provisional and full driving licences</li>
+        <!--<li>Non-UK passports</li>
+        <li>EEA/EU driving licences</li>
+        <li>EEA/EU identity cards</li>-->
+      </ul>
+    </li>
+    <li>All documents must meet international, government or European Directive standards.</li>
+    <li>Upload a short video of themselves reading 4 randomly generated numbers out loud; and</li>
+    <li>Give the postcode of the GP surgery where they are registered plus either their name and date of birth or their NHS number.</li>
+  </ul>
+
+  <p>Once this information is submitted by the user, our Home Office trained ID Checkers, will verify the user’s identity. This is done by checking the ID submitted is valid, checking the user is the same person on that ID using the video they submit of themselves, and running a search, using the information provided, to find a match on the NHS Personal Demographics Service (PDS) and attaching their NHS Number to their NHS login account.</p>
+
+  <p>We aim to complete this process within 2 hours of the user uploading their information.</p>
+    
+  </div>
+</div>
+
+
+
+
+{% endblock %}

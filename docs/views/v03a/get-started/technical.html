@@ -1,0 +1,65 @@
+{% extends 'v03a/layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    },
+    {
+      href: "../get-started/get-started",
+      text: "Get Started"
+    }],
+    href: "",
+    text: "Technical"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+    <h2>Technical</h2>
+
+    <p>Try our <a href="http://nhslogin-demo.herokuapp.com/">prototypes</a> and <a href="https://stub.signin.nhs.uk/client">stub environment</a> straight away, there's no sign up required.</p>
+
+    <p>To further develop your service then request access to our <a href="https://docs.google.com/forms/d/e/1FAIpQLSeLlIv90g_SLEWRqpPxEdeKfzsqFNNkCBfwvB43hopwf8WrEw/viewform">sandpit environment.</a></p>
+
+    <hr>
+
+    <p><strong>Stub</strong>
+    <br />This is a lightweight representation of our OIDC endpoints.
+    <br />It is useful as a developer learning exercise and usable for partner test/dev environments - where NHS login is not part of the test case.</p>
+
+    <p><strong>Sandpit</strong>
+    <br />This is a copy of our production code, without integration to our backend systems: PDS and GP systems for linkage key retrieval.
+    <br />As it doesn’t have entry criteria, anyone can plugin NHS login into their service to see how it visually and technically works.
+    <br />Doing this will make the move to Assurance and Production technically straightforward.
+    <br />It isn’t intended as a test environment, so we don’t add lots of data, or approve any ID check submissions.</p>
+
+    <p><strong>Assurance</strong>
+    <br />As sandpit, expect linked to PDS INT/DEV (as required).
+    <br />Used by partners to be sure test cases are handled as expected. Can be loaded with test accounts as required. NHS login will check a partner has completed a successful end to end test before moving into PROD.</p>
+
+    </div>
+  </div>
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

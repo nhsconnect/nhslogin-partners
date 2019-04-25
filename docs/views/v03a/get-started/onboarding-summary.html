@@ -1,0 +1,53 @@
+{% extends 'v03a/layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    },
+    {
+      href: "../get-started/get-started",
+      text: "Get Started"
+    }],
+    href: "",
+    text: "Onboarding Summary"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+    <h2>Request onboarding</h2>
+
+    <img src="/images/onboarding-process.png"  />
+    <mark>get original version</mark>
+    <p><strong>How long is the onboarding process?</strong>
+    <br />We are currently in a private beta, during this period we will be testing the onboarding process with a small number of partners to understand the timescales involved.</p>
+
+    <p><strong>How does prioritisation work?</strong>
+    <br />Due to the number of partners waiting to use NHS login we need have a process for prioritising. Prioritisation will be based on a variety of factors such as strategic fit and benefits to health and social care.</p>
+
+    </div>
+  </div>
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

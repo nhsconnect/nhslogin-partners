@@ -1,0 +1,46 @@
+{% extends 'v01/layout.html' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    }],
+    href: "",
+    text: "is it right"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+<h1>  Find out if NHS login is right for your service</h1>
+ <div class="nhsuk-u-reading-width">
+
+
+ <p>Our service is in private Beta and we’re continually refining the service and launching new features.</p>
+
+<h3>Key things you should know:</h3>
+<p>NHS login is designed and funded for Health and Social Care services.  Our priority will be connecting services that align to NHS strategy and deliver benefits to the NHS and social care ecosystem.
+</p>
+<ul>
+    <li>Today the key means we have for verifying a users identity is online and requires users to have a smartphone, and machine readable ID (passport and driving license).</li>
+    <li>NHS login is currently only available for services in England and links users to their NHS number</li>
+    <li>Clinical authorisation remains the responsibility of the partner service.</li>
+    <li>Your service and organisation will need to meet our assurance requirements and sign our contract.</li>
+</ul>
+<p>Find out more about the NHS login service and the features it has today.  Find out more about our roadmap.</p>
+
+
+
+    {{ backLink({
+        "href": "index",
+        "text": "Return to overview"
+    }) }}
+
+  </div>
+
+{% endblock %}
