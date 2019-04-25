@@ -1,6 +1,6 @@
 # NHS login onboarding site
 
-Built upon the NHS.UK prototype kit, this site contains the prototype, prototype history and is able to output files for the live service
+Built upon the NHS.UK prototype kit
 
 ## Prerequisite
 
