@@ -24,7 +24,7 @@ const app = express();
 const documentationApp = express();
 
 // Check if the app is documentation only
-if(onlyDocumentation !== 'false') {
+if(onlyDocumentation !== 'true') {
   // Require authentication if not
   app.use(authentication);
 }
@@ -59,12 +59,12 @@ app.use(bodyParser.urlencoded({
 }))
 
 // not sure if this will work
-if(onlyDocumentation == 'false') {
-  app.get('/docs', function(req, res) {
-    // Redirect to the documentation pages if it is
-    res.redirect('/');
-  });
-}
+//if(onlyDocumentation == 'true') {
+//  app.get('/', function(req, res) {
+//    // Redirect to the documentation pages if it is
+//    res.redirect('/');
+//  });
+//}
 
 // Check if the app is documentation only
 if(onlyDocumentation == 'true') {
@@ -72,10 +72,9 @@ if(onlyDocumentation == 'true') {
     // Redirect to the documentation pages if it is
     res.redirect('/docs');
   });
-} else {
-  // Else use custom application routes
-  app.use('/', routes);
 }
+
+app.use('/', routes);
 
 // Automatically route pages
 app.get(/^([^.]+)$/, function (req, res, next) {
