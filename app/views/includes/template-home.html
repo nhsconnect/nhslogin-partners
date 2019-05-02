@@ -51,11 +51,15 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-
+   
   </head>
 
   <body class="{{ bodyClasses }}">
+
+
+  
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+   
     {% block bodyStart %}{% endblock %}
 
       {% block skipLink %}
@@ -64,15 +68,31 @@
           text: 'Skip to main content'
         }) }}
       {% endblock %}
-
+      <!--
       <div class="feedback-survey-banner" role="region">
         <div class="rich-text"><p>This is a new service, <a href="mailto:engage.nhslogin@nhs.net?subject=NHS login self service site feedback">Let us know how we can make it better.</a></p></div>
       </div>
+      -->
+      <div id="nhsuk-cookie-banner" style="display: none">
+        <div class="nhsuk-cookie-banner" id="cookiebanner" aria-label="Cookie banner" role="banner">
+          <div class="nhsuk-width-container">
+            <p>We've put small files called cookies on your device to make the website better.</p>
+            <ul>
+              <li id="nhsuk-cookie-banner__link_accept"><a href="#" tabindex="1"><strong>I'm OK with cookies</strong></a></li>
+              <li id="nhsuk-cookie-banner__link"><a href="/policy/cookies" tabindex="2">Turn cookies on or off</a></li>
+            </ul>
+          </div>
+        </div>
 
+        <div class="nhsuk-success-banner" id="nhsuk-cookie-confirmation-banner" style="display:none;" role="banner">
+          <div class="nhsuk-width-container">
+            <p>Your cookie settings have been saved. <a href="/policy/cookies" style="color: #ffffff;">Turn cookies on or off</a></p>
+          </div>
+        </div>
+      </div>
       {% block header %}
         {{ header({}) }}
       {% endblock %}
-
 
 
       {% block beforeContent %}{% endblock %}
@@ -81,15 +101,31 @@
           <!--<div class="nhsuk-width-container">-->
             <main id="main-content" role="main">
               {% block content %}{% endblock %}
+              <script>
+              document.addEventListener("DOMContentLoaded", function(){
+                if (document.cookie.indexOf("cookiePreference=") >= 0) {
+                } else {
+                  document.getElementById('nhsuk-cookie-banner').style.display = "block";
+                  document.getElementById("nhsuk-cookie-banner__link_accept").addEventListener("click", function(){
+                    document.cookie = "cookiePreference = 1;";
+                    document.getElementById('nhsuk-cookie-banner').style.display = "none";
+                  });
+                }
+              });
+              </script>
             </main>
           <!--</div>-->
+
         {% endblock %}
       </div>
       {% block footer %}
         {{ footer({
           "showLogo": "false"
         })}}
+
       {% endblock %}
 
-    {% block bodyEnd %}{% endblock %}
+    {% block bodyEnd %}
+
+    {% endblock %}
 </html>
