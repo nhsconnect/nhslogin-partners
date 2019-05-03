@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "Home"
+    },
+    {
+      href: "../onboarding/get-started",
+      text: "Get Started"
+    }],
+    href: "",
+    text: "Onboarding Summary"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-u-margin-bottom-5">Before you request onboarding</h1>
+
+    <h2>1. Check if you need NHS login</h2>
+    <p>Before you start connecting your service to NHS login, find out <a href="../how-it-works">how NHS login works</a> and <a href="../why-use-nhs-login#isitright">if it’s right for your service</a>.</p>
+
+    <h2>2. Choose your ‘Vector of Trust'</h2>
+    <p>You will need to determine the <a href="../how-it-works/authentication-verification#vot">‘Vector of Trust’</a> for your service. This is the minimum level of user verification that you should be willing to accept before providing a user with access to your service.</p>
+    <p>As part of the assurance process we’ll ask that you’ve gone through this process.</p>
+
+    <h2>3. Develop in the Sandpit</h2>
+    <p>The Sandpit is a copy of our production code environment which will help you learn how to integrate with our service. Developing in the Sandpit is a mandatory step before a service can be onboarded.</p>
+
+    <p>The Sandpit can be accessed from the <a href="https://github.com/nhsconnect/nhslogin/" target="blank">NHS login GitHub</a>.</p>
+
+    <h2>4. Begin preparation for ‘Supplier conformance assessment’</h2>
+
+    {{ actionLink({
+        "text": "Request onboarding",
+        "href": "request-onboarding"
+      }) }}
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    },
+    {
+      href: "../how-it-works-1",
+      text: "How it works"
+    }],
+    href: "",
+    text: "Close their account"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h2>Example user journeys:</h2>
+{{ contentsList({
+  items: [
+    {
+      href: "create",
+      text: "Create an NHS login"
+      
+    },
+    {
+      href: "prove",
+      text: "Prove their identity"
+    },
+    {
+      href: "login",
+      text: "Log in using NHS login"
+    }
+    ,
+    {
+      href: "reset",
+      text: "Reset their password/manage their account"
+    }
+    ,
+    {
+      href: "close",
+      text: "Close their account",
+      current: "true"
+
+    },
+    {
+      href: "logout",
+      text: "Log out"
+    }
+  ]
+}) }}
+
+      <h2>Account closure</h2>
+      <p>NHS login has a process to automatically remove unused accounts. Currently, if your users wish to proactively remove their account, you can raise this to us via a <a href="">support ticket</a><mark>needs correct link</mark>.</p>
+      <p>In line with our self-service ethos, we intend to revisit the potential for introducing enhanced capability as we progress through our scheduled Public Beta.</p>
+
+      {{ pagination({
+        "previousUrl": "reset",
+        "previousPage": "Reset their password/manage their account",
+        "nextUrl": "logout",
+        "nextPage": "Log out"
+      }) }}
+      
+    </div>
+  </div>
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

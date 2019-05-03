@@ -1,0 +1,144 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "Home"
+    },
+    {
+      href: "../how-it-works",
+      text: "How it works"
+    }],
+    href: "",
+    text: "Authentication and verification"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-u-margin-bottom-5">Authentication and verification</h1>
+      <p>NHS login provides two functions:</p>
+
+      <ol>
+        <li>Verification - we currently offer two ‘User Identity Proofing Levels’ (P0 and P9) but we will be supporting a wider variety in future.</li>
+        <li>Authentication - we currently support three ‘User Authentication Context Classes’ but as with the Identity Proofing Levels, the intention is to expand the classes that we support.</li>
+      </ol>
+           
+      <h2>User Identity Verification Proofing Levels</h2>
+
+      <p>At this time we support the following:</p>
+
+
+<div class="nhsuk-table-responsive">
+  <table class="nhsuk-table">
+    <caption class="nhsuk-table__caption">Skin symptoms and possible causes</caption>
+    <thead class="nhsuk-table__head">
+      <tr class="nhsuk-table__row">
+        <th class="nhsuk-table__header" scope="col">Value</th>
+        <th class="nhsuk-table__header" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody class="nhsuk-table__body">
+      <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">P0 (Lowest)</td>
+        <td class="nhsuk-table__cell ">
+          <strong>No Identity proofing</strong><br />
+          This maps to ‘Verification – None’ within DCB3051
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">P9 (Highest)</td>
+        <td class="nhsuk-table__cell ">
+          <strong>Physical comparison</strong><br />
+          This maps to ‘Verification – High’ within DCB3051
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+   
+      <p>When requesting the User Identity Verification Proofing Level this represents the minimum verification level that your service is willing to accept.</p>
+      <h2>User Authentication Context Classes</h2>
+
+      <p>At this time we support the following:</p>
+
+<div class="nhsuk-table-responsive">
+  <table class="nhsuk-table">
+    <caption class="nhsuk-table__caption">Skin symptoms and possible causes</caption>
+    <thead class="nhsuk-table__head">
+      <tr class="nhsuk-table__row">
+        <th class="nhsuk-table__header" scope="col">Value</th>
+        <th class="nhsuk-table__header" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody class="nhsuk-table__body">
+      <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">Cp (UID and Password)</td>
+        <td class="nhsuk-table__cell ">
+          <strong>Password-based</strong><br />
+          The user is in possession of a secret (for example a password, PIN, etc) belonging to the legitimate account holder.
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">Cd (Username + E.g. one time code sent to device by SMS)</td>
+        <td class="nhsuk-table__cell ">
+          <strong>Registered Device</strong><br />
+          The user is in possession of a device which has previously been associated with the account.
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">Cm (Username + Private and public key FIDO)</td>
+        <td class="nhsuk-table__cell ">
+          <strong>Asymmetric Cryptographic key within a Registered Device</strong><br />
+          The user is in possession of a device which has previously been associated with their account and has access to a private key securely stored on the device – such as a FIDO-compliant device.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+      
+      <h2 id="vot">Vectors of Trust</h2>
+      <p>You will need to determine the ‘Vector of Trust’ for your service. This is the minimum level of user verification (Proofing level + Authentication Context Class(es)) that you should be willing to accept before providing a user with access to your service.</p>
+
+      <p>This approach provides you with a choice that delivers the most appropriate combination for your service.</p> 
+
+      <h3>Examples of Vectors of Trust</h3>
+
+      {{ panel({
+        "label": "Example 1",
+        "HTML": "<p>Your service may require that a user is simply self registered with no additional identity verification checks and uses only a user ID + password for verification. You would therefore be requesting the Vectors of Trust [P0.Cp].</p>"
+      }) }}
+
+      {{ panel({
+        "label": "Example 2",
+        "HTML": "<p>You may request [“P9.Cp.Cd”,”P9.Cm”] which is equivalent to the service saying:  “give me a user who has had their identity verified to level 9 by the NHS login Service and undertake both password and device authentication during their login process, OR providing they have been verified by you to level P9, we’ll accept their login using FIDO with you”.</p>"
+      }) }}
+
+      <p>The Vectors of Trust that you request is an exhaustive list of any value you are willing to accept.</p>
+
+      <p>A successful authentication request will always result in one of your requested Vectors of Trust values being returned in the Identity and Access Tokens.</p>
+
+      <p>This will confirm that the user has met the <strong>minimum</strong> requested level for identity verification proofing (even though the user’s actual identity verification proofing level may be higher) and has <strong>exactly</strong> met the requested authentication context.</p>
+
+      {{ warningCallout({
+        "heading": "Just so you know",
+        "HTML": "<p>Until we develop proofing levels between P0 and P9, we require you to specify the most appropriate minimum level for your service.</p>
+        <p>In the interim, we will be providing verification for any individual above P0 at P9 - P9 being our most trusted but also most labour intensive process for both the service and the user.</p>
+        "
+      }) }}
+      
+    </div>
+  </div>
+
+{% endblock %}

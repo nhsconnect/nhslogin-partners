@@ -1,0 +1,123 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    },
+    {
+      href: "../how-it-works-1",
+      text: "How it works"
+    }],
+    href: "",
+    text: "Create an NHS login"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h2>Example user journeys:</h2>
+{{ contentsList({
+  items: [
+    {
+      href: "create",
+      text: "Create an NHS login",
+      current: "true"
+    },
+    {
+      href: "prove",
+      text: "Prove their identity"
+    },
+    {
+      href: "login",
+      text: "Log in using NHS login"
+    }
+    ,
+    {
+      href: "reset",
+      text: "Reset their password/manage their account"
+    }
+    ,
+    {
+      href: "close",
+      text: "Close their account"
+    },
+    {
+      href: "logout",
+      text: "Log out"
+    }
+  ]
+}) }}
+
+<style>
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>
+
+      <h2>Here’s how a user creates an NHS login:</h2>
+      <div class="videoWrapper">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/wI-jF9zJw0c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <br /></br />
+      <mark>img - flow</mark>
+      <ol>
+        <li><strong>User signs up to a service</strong></li>
+        <li><strong>Creates an NHS log in</strong><br />If the user does not already have an NHS login account they will be asked to:
+
+          <ul>
+            <li>set up their account by entering their email address and password.</li>
+            <li>provide a mobile phone number to which they are sent a 4-digit code which they must enter as part of the 2FA process.</li>
+            <li>accept the NHS login Service Terms and Conditions of use</li>
+          </ul>
+      
+        <br />At this point, the user will have a basic NHS login account which will allow them access to generic NHS services and information which do not contain personalised and potentially sensitive data.
+        <br />If the user requires access to services that make use of personal information, then they must verify their identity to the level required by the partner service.
+
+        <br />To verify their identity, a user can either:
+          <ul>
+            <li>Use NHS login services to prove their identity online (referred to as Prove Your Identity (PYI)); or</li>
+            <li>Use NHS login services and opt to re-use their existing GP Patient OnLine linkage key information (POL) to prove who they are.</li>
+          </ul>
+        </li>
+      </ul>
+
+      {{ pagination({
+        "nextUrl": "prove",
+        "nextPage": "Prove their identity"
+      }) }}
+
+    </div>
+  </div>
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

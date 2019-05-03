@@ -1,0 +1,174 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "Home"
+    }],
+    href: "",
+    text: "How it works"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-u-margin-bottom-5">How it works
+      </h1>
+      <p>NHS login is an internet facing system for identifying and verifying a user’s identity.</p>
+      <p>It uses the <a target="blank" href="https://openid.net/developers/specs/">Open ID Connect</a> and the <a target="blank" href="https://oauth.net/2/">Oauth2.0</a> protocols. It also uses <a target="blank" href="https://fidoalliance.org/specifications/">FIDO (Fast Identity Online) specifications</a>  which improves the user’s experience by allowing Fingerprint ID and Face ID to seamlessly access native apps.</p>
+      <p>NHS login offers different levels and combinations of verification and authentication so you can choose the most appropriate for your service.</p>
+      <p><a href="how-it-works/authentication-verification">Find out more about the levels we currently support, and what we intend to support in future</a></p>
+
+      <h2>Example user journeys:</h2>
+
+
+<style>
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>
+
+      <div class="nhsuk-expander-group">
+      {{ details({
+        "classes": "nhsuk-expander",
+        "text": "Creating an NHS login:",
+        "HTML": "
+        <div class='videoWrapper'>
+        <iframe width='560' height='315' src='https://www.youtube.com/embed/wI-jF9zJw0c' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
+      </div>
+      <br />
+      <ol>
+        <li><strong>User signs up to a service</strong></li>
+        <li><strong>Creates an NHS log in</strong>
+        <p>If the user does not already have an NHS login account they will be asked to:</p>
+          <ul>
+            <li>set up their account by entering their email address and password.</li>
+            <li>provide a mobile phone number to which they are sent a 4-digit code which they must enter as part of the 2FA process.</li>
+            <li>accept the NHS login Service Terms and Conditions of use</li>
+          </ul>
+      </li>
+      </ol>
+        <p>At this point, the user will have a basic NHS login account which will allow them access to generic NHS services and information which do not contain personalised and potentially sensitive data.</p>
+        <p>If the user requires access to services that make use of personal information, then they must verify their identity to the level required by the partner service.</p>
+
+        <p>To verify their identity, a user can either:</p>
+          <ul>
+            <li>A. Use NHS login services to prove their identity online</li>
+            <li>B. Use NHS login services and opt to re-use their existing GP Patient OnLine linkage key information to prove who they are.</li>
+          </ul>
+    
+      "
+      }) }}
+
+      {{ details({
+        "classes": "nhsuk-expander",
+        "text": "Proving their identity",
+        "HTML": "
+       <ol start='3'>
+        <li><strong>Enter demographic details</strong>
+        <p>Give the postcode of the GP surgery where they are registered plus either their name and date of birth or their NHS number.</p>
+        </li>
+        <li><strong>Takes a picture of their photo ID document</strong>
+          <ul>
+            <li>Upload a copy of a photo ID document. Admissible documents include:
+              <ul>
+                <li>UK passports</li>
+                <li>UK provisional and full driving licences</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>Takes a short video</strong>
+        <p>Upload a short video of themselves reading 4 randomly generated numbers out loud</p>
+        </li>
+        <li><strong>ID verification</strong>
+        <p>Once this information is submitted by the user, our Home Office trained ID Checkers, will verify the user’s identity. This is done by:</p>
+          <ul>
+            <li>checking the ID submitted is valid</li>
+            <li>checking the user is the same person on that ID using the video they submit of themselves</li>
+            <li>running a search to find a match on the NHS Personal Demographics Service (PDS)</li>
+            <li>attaching their NHS Number to their NHS login account.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p>We aim to complete this process within <strong>2 hours</strong> of the user uploading their information.</p>
+      "
+      }) }}
+
+      {{ details({
+        "classes": "nhsuk-expander",
+        "text": "Proving their identity - via Patient Online",
+        "HTML": "
+          <p>To prove their identity via the Patient Online (POL) journey, a user must use NHS login to enter:</p>
+      <ul>
+        <li>the POL Account Linkage Key/Passphrase,</li>
+        <li>Account ID and</li>
+        <li>Practice ODS code which will have been issued to the user when they first requested GP online service credentials from their GP surgery.</li>
+      </ul>
+      <p>Once this information is submitted by the user, the details are checked against the GP system. As in the PYI journey, during this process the NHS number will also be matched to the user and stored in their NHS login account.</p>
+      "
+      }) }}
+
+      {{ details({
+        "classes": "nhsuk-expander",
+        "text": "Logging in",
+        "HTML": "
+        <p>Once their NHS login account has been created, the next time the user navigates to a partner service’s login page, they will again be offered the option of signing into the system using NHS login.</p>
+        <p>The user can enter their ID and Password plus 2FA code. You can also implement fingerprint or Face ID if your service is an app.</p>
+        <p>The system then ensures the user has the appropriate level of verification for the service and logs them in.</p>
+        <p><a href='http://nhslogin-demo.herokuapp.com/' target='blank'>View the prototypes</a></p>
+      "
+      }) }}
+
+      {{ details({
+        "classes": "nhsuk-expander",
+        "text": "Management of NHS login Accounts",
+        "HTML": "
+        <p>We aim to make the NHS login Service account management capabilities self-service for the user wherever possible. The Service currently includes a feature that enables users to reset their NHS login password on a self-serve basis.</p>
+      <p>Additionally, we intend to deliver the capability for users to change their email address and/or their 2FA mobile number online by our Public Beta.</p>
+      "
+      }) }}
+
+      {{ details({
+        "classes": "nhsuk-expander",
+        "text": "Account closure",
+        "HTML": "
+       <p>NHS login has a process to automatically remove unused accounts. Currently, if your users wish to proactively remove their account, you can raise this to us via a support ticket.</p>
+      <p>In line with our self-service ethos, we intend to revisit the potential for introducing enhanced capability as we progress through our scheduled Public Beta.</p>
+      "
+      }) }}
+
+      {{ details({
+        "classes": "nhsuk-expander",
+        "text": "Logging out",
+        "HTML": "
+        <p>Our intention is for NHS login to support global log-off for those partners using the Single Sign On capability that we are in the process of developing. This functionality is intended to be delivered after we enter Public Beta.</p>
+      "
+      }) }}
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
