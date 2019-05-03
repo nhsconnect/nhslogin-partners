@@ -30,7 +30,9 @@
     "nunjucks": "^3.1.6",
     "gulp-htmlmin": "^5.0.1",
     "gulp-nunjucks-render": "^2.2.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "tar":"^4.4.8",
+    "lodash":"^4.17.11"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
