@@ -3,7 +3,7 @@
 {% set mainClasses = 'nhsuk-main-wrapper--s' %}
 
 {% block pageTitle %}
-  {{ serviceName }}
+  NHS Login
 {% endblock %}
 
 {% block header %}
@@ -15,7 +15,7 @@
         <div class="nhsuk-grid-column-full">
           <div class="nhsuk-hero-content">
             <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">NHS login is a quick and secure way of identifying and verifying who a user is.</h1>
-            <p class="nhsuk-body-l nhsuk-u-margin-bottom-0"></p>
+            <!--<p class="nhsuk-body-l nhsuk-u-margin-bottom-0"></p>-->
             <span class="nhsuk-hero__arrow" aria-hidden="true"></span>
           </div>
         </div>
@@ -49,6 +49,7 @@
     <div class="nhsuk-grid-row nhsuk-promo-group">
       <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
         {{ promo({
+        "headingLevel": "2",
         "href": "what-is-nhs-login",
         "heading": "What is NHS login",
         "description": "NHS login is a flexible solution which removes the headache of creating user accounts, verifying identity, and linking to NHS numbers."
@@ -56,6 +57,7 @@
       </div>
       <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
         {{ promo({
+        "headingLevel": "2",
         "href": "why-use-nhs-login",
         "heading": "Why use NHS login",
         "description": "If you're building a health or social care app or website for patients, NHS login could be right for your service."
@@ -65,6 +67,7 @@
     <div class="nhsuk-grid-row nhsuk-promo-group">
       <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
         {{ promo({
+        "headingLevel": "2",
         "href": "how-it-works",
         "heading": "How does NHS login work",
         "description": "NHS login is an internet facing system which uses the OpenID Connect and the Oauth2.0 protocols."
@@ -72,6 +75,7 @@
       </div>
       <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
         {{ promo({
+        "headingLevel": "2",
         "href": "onboarding/get-started",
         "heading": "Get started",
         "description": "View a step-by-step guide to onboarding to NHS login, and request access to the NHS login sandpit."
