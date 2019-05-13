@@ -1,4 +1,4 @@
-{% extends "includes/template.html" %}
+{% extends "v04/includes/template.html" %}
 
 {% from 'action-link/macro.njk' import actionLink %}
 {% from 'nav-a-z/macro.njk' import azNav %}
@@ -43,10 +43,6 @@
 {% block header %}
 
 {{ header({
-  "transactionalService": {
-      "name": "NHS login Self Service",
-      "href": "index"
-    },
     "showNav": "false",
     "showSearch": "false"
   })
@@ -57,16 +53,7 @@
 {% block footer %}
   
   {{ footer({
-    "links": [
-      {
-        "URL": "/docs/v02/connecting/connecting",
-        "label": "Get Started"
-      },
-      {
-        "URL": "/docs/v02/documentation/service-description",
-        "label": "Documentation"
-      }
-    ]
+    
   })}}
 {% endblock %}
 

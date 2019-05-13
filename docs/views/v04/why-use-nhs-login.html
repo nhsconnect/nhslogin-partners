@@ -1,0 +1,83 @@
+{% extends 'v04/layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  Why use NHS login - NHS login
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "Home"
+    }],
+    href: "",
+    text: "Why use NHS login?"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-u-margin-bottom-5">Why use NHS login?</h1>
+      <p>If you’re building a health or social care app or website for patients, NHS login is a flexible solution which can take away the headache of creating an account for a user, verifying the user’s identity, and linking it to their NHS number.</p>
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-grid-column-one-half">
+        {{ panel({
+          "headingLevel": "2",
+          "label": "Benefits to your <strong>users:</strong>",
+          "HTML": "<ul><li>one-time simple sign-up process</li><li>single login to access multiple health and social care services</li><li>peace of mind that their data is secure</li></ul>"
+        }) }}
+      </div>
+      <div class="nhsuk-grid-column-one-half">
+      {{ panel({
+        "headingLevel": "2",
+        "label": "Benefits to your <strong>organisation:</strong>",
+        "HTML": "<ul><li>being sure your users are who they say they are</li><li>not having to build and manage an identity platform</li><li>choose a level of user verification appropriate to your service</li></ul>"
+      }) }}
+      </div>
+    </div>
+  
+    <div class="nhsuk-grid-column-two-thirds">
+      <h2 id="isitright">Is it right for your service?</h2>
+      <p>NHS login is designed and funded for health and social care services. It provides user verification facilities and the creation of a user account that can be used to login to other Health and Social Care Services.</p>
+
+      <p>If your service aligns to NHS strategy and delivers benefits to the NHS and social care ecosystem you can apply to use NHS login to check a user’s identity.</p>
+
+      <p>Your service might need to do this if it:</p>
+      <ul>
+        <li>shows a user personal information about themselves, such as their medical records</li>
+        <li>replaces a form that needs to be physically signed by a user</li>
+      </ul>
+
+      <p>The team behind NHS login work in a user-centred, agile way. As such, the service will be continually improved via iterative releases that have been validated via user research and testing.</p>
+      <p>View more information on <a href="onboarding/get-started">how to onboard</a>, or <a href="https://github.com/nhsconnect/nhslogin" target="blank">investigate technical integration</a></p>
+
+      {{ warningCallout({
+        "heading": "Service limitations",
+        "HTML": "<p>There are limitations to the service as we continue to develop it. We are defining our roadmap based on research and data insights, but for now:</p>
+        <ul>
+        <li>NHS login is currently only available for services in England</li>
+        <li>users need a form of Government ID</li> 
+        <li>users need a smartphone</li>
+        <li>delegated access (ie parent / child or vulnerable individual) isn’t currently supported but it is on our roadmap</li>
+        <li>your service and organisation will need to meet our assurance requirements and sign our contract</li>
+        <li>if you’re supplying a service to an organisation, they will need to sign End User Organisation Declaration</li>
+        <li>clinical authorisation remains the responsibility of the partner service</li>
+        <li>managing and controlling the data an end user is permitted to access remains the responsibility of the partner service</li>
+      </ul>"
+      }) }}
+      {#
+      {{ actionLink({
+        "text": "View the currently available features and roadmap",
+        "href": "features-and-roadmap"
+      }) }}
+      #}
+    </div>
+  </div>
+
+{% endblock %}

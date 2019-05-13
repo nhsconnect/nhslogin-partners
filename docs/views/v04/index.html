@@ -1,0 +1,110 @@
+{% extends 'v04/layout-home.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  NHS Login
+{% endblock %}
+
+{% block header %}
+{{ super() }}
+<section class="nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description" style="background-image: url('/images/Fibre-494278832-MED.jpg');">
+  <div class="nhsuk-hero__overlay">
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-hero-content">
+            <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">NHS login is a quick and secure way of identifying and verifying who a user is.</h1>
+            <!--<p class="nhsuk-body-l nhsuk-u-margin-bottom-0"></p>-->
+            <span class="nhsuk-hero__arrow" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<style>
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>
+
+
+<section class="nhsx-section nhsx-u-hero-spacing">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row nhsuk-promo-group">
+      <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
+        {{ promo({
+        "headingLevel": "2",
+        "href": "what-is-nhs-login",
+        "heading": "What is NHS login",
+        "description": "NHS login is a flexible solution which removes the headache of creating user accounts, verifying identity, and linking to NHS numbers."
+        }) }}
+      </div>
+      <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
+        {{ promo({
+        "headingLevel": "2",
+        "href": "why-use-nhs-login",
+        "heading": "Why use NHS login",
+        "description": "If you're building a health or social care app or website for patients, NHS login could be right for your service."
+        }) }}
+      </div>
+    </div>
+    <div class="nhsuk-grid-row nhsuk-promo-group">
+      <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
+        {{ promo({
+        "headingLevel": "2",
+        "href": "how-it-works",
+        "heading": "How does NHS login work",
+        "description": "NHS login is an internet facing system which uses the OpenID Connect and the Oauth2.0 protocols."
+        }) }}
+      </div>
+      <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
+        {{ promo({
+        "headingLevel": "2",
+        "href": "onboarding/get-started",
+        "heading": "Get started",
+        "description": "View a step-by-step guide to onboarding to NHS login, and request access to the NHS login sandpit."
+        }) }}
+      </div>
+    </div>
+  </div>
+</section>   
+
+<section class="nhsx-section nhsx-section--white">
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+          <h2>Video</h2>
+          <div class="nhsuk-promo nhsx-promo--grey nhsx-promo--homepage-video">
+            <div class="nhsx-embed-container"><iframe src="https://www.youtube-nocookie.com/embed/aY9qGebzKww" allowfullscreen=""></iframe></div>
+            <div class="nhsuk-promo__content nhsx-content--grey">
+              <h3>An introduction to NHS login</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-grid-column-one-half">
+          <h2>Contact us</h2>
+          <p>If you can not find an answer then <a href="mailto:engage.nhslogin@nhs.net">ask a question on our mailbox</a> or <a href="https://nhs-login-support-slack-invite.herokuapp.com/" target="blank">join the NHS login Slack channel</a></p>
+          <p>We produce a weekly newsletter so <a href="mailto:engage.nhslogin@nhs.netsubject=join nhs login mailing list">join our mailing list</a> for the latest NHS login updates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

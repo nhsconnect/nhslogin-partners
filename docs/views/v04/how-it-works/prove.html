@@ -1,0 +1,131 @@
+{% extends 'v04/layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    },
+    {
+      href: "../how-it-works-1",
+      text: "How it works"
+    }],
+    href: "",
+    text: "Prove their identity"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h2>Example user journeys:</h2>
+{{ contentsList({
+  items: [
+    {
+      href: "create",
+      text: "Create an NHS login"
+    },
+    {
+      href: "prove",
+      text: "Prove their identity",
+      current: "true"
+    },
+    {
+      href: "login",
+      text: "Log in using NHS login"
+    }
+    ,
+    {
+      href: "reset",
+      text: "Reset their password/manage their account"
+    }
+    ,
+    {
+      href: "close",
+      text: "Close their account"
+    },
+    {
+      href: "logout",
+      text: "Log out"
+    }
+  ]
+}) }}
+
+      <h2>A: The PYI journey:</h2>
+
+      <ol start="3">
+        <li><strong>Enter demographic details</strong>
+        <br />Give the postcode of the GP surgery where they are registered plus either their name and date of birth or their NHS number.
+        </li>
+        <li><strong>Takes a picture of their photo ID document</strong>
+          <ul>
+            <li>Upload a copy of a photo ID document. Admissible documents include:
+              <ul>
+                <li>UK passports</li>
+                <li>UK provisional and full driving licences</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>Takes a short video</strong>
+        <br />Upload a short video of themselves reading 4 randomly generated numbers out loud
+        </li>
+        <li><strong>ID verification</strong>
+        <br />Once this information is submitted by the user, our Home Office trained ID Checkers, will verify the user’s identity. This is done by:
+          <ul>
+            <li>checking the ID submitted is valid</li>
+            <li>checking the user is the same person on that ID using the video they submit of themselves</li>
+            <li>running a search to find a match on the NHS Personal Demographics Service (PDS)</li>
+            <li>attaching their NHS Number to their NHS login account.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p>We aim to complete this process within <strong>2 hours</strong> of the user uploading their information.</p>
+      
+      <hr>
+
+      <h2>B: The POL journey:</h2>
+      <p>To prove their identity via the Patient Online (POL) journey, a user must use NHS login to enter:</p>
+      <ul>
+        <li>the POL Account Linkage Key/Passphrase,</li>
+        <li>Account ID and</li>
+        <li>Practice ODS code which will have been issued to the user when they first requested GP online service credentials from their GP surgery.</li>
+      </ul>
+      <p>Once this information is submitted by the user, the details are checked against the GP system. As in the PYI journey, during this process the NHS number will also be matched to the user and stored in their NHS login account.</p>
+
+      {{ actionLink({
+        "text": "View the prototypes",
+        "href": "http://nhslogin-demo.herokuapp.com/",
+        "openInNewWindow": "true"
+      }) }}
+
+      {{ pagination({
+        "previousUrl": "create",
+        "previousPage": "Create an NHS login",
+        "nextUrl": "login",
+        "nextPage": "Log in using NHS login"
+      }) }}
+
+    </div>
+  </div>
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

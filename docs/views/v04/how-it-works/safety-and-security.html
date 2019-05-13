@@ -1,0 +1,34 @@
+{% extends 'v04/layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  Safety and security - how it works - NHS login
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "Home"
+    },
+    {
+      href: "../how-it-works",
+      text: "How it works"
+    }],
+    href: "",
+    text: "Safety and security"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-u-margin-bottom-5">Safety and security</h1>
+      <p>Proving users’ identities using the NHS login meets the published standard for identity checking in health and care services. <a target="blank" href="https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb3051-identity-verification-and-authentication-standard-for-digital-health-and-care-services">Read about the standards on proving identity that NHS login follows.</a></p>
+      <p>NHS login stores and processes users’ personal information securely and in line with strict standards. <a target="blank" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/711097/guide-to-the-general-data-protection-regulation-gdpr-1-0.pdf">Read more about data storage.</a></p>
+    </div>
+  </div>
+
+{% endblock %}

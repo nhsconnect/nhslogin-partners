@@ -1,0 +1,95 @@
+{% extends 'v04/layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "home"
+    },
+    {
+      href: "../how-it-works-1",
+      text: "How it works"
+    }],
+    href: "",
+    text: "Log in using NHS login"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h2>Example user journeys:</h2>
+{{ contentsList({
+  items: [
+    {
+      href: "create",
+      text: "Create an NHS login"
+      
+    },
+    {
+      href: "prove",
+      text: "Prove their identity"
+    },
+    {
+      href: "login",
+      text: "Log in using NHS login",
+      current: "true"
+    }
+    ,
+    {
+      href: "reset",
+      text: "Reset their password/manage their account"
+    }
+    ,
+    {
+      href: "close",
+      text: "Close their account"
+    },
+    {
+      href: "logout",
+      text: "Log out"
+    }
+  ]
+}) }}
+
+    <h2>Here’s how a user logs in using NHS login:</h2>
+      <p>Once their NHS login account has been created, the next time the user navigates to a partner service’s login page, they will again be offered the option of signing into the system using NHS login.</p>
+      <p>The user can enter their ID and Password plus 2FA code. You can also implement fingerprint or Face ID if your service is an app.</p>
+      <p>The system then ensures the user has the appropriate level of verification for the service and logs them in.</p>
+      
+
+      {{ actionLink({
+        "text": "View the prototypes",
+        "href": "http://nhslogin-demo.herokuapp.com/",
+        "openInNewWindow": "true"
+      }) }}
+
+      {{ pagination({
+        "previousUrl": "prove",
+        "previousPage": "Prove their identity",
+        "nextUrl": "reset",
+        "nextPage": "Reset their password/manage their account"
+      }) }}
+
+    </div>
+  </div>
+{% block pageScripts %}
+<script>
+document.getElementById('get-started').addEventListener('click', function() {
+  console.log('clicked it!');
+
+});
+
+//console.log(getStarted);
+</script>
+{% endblock %}
+
+
+{% endblock %}

@@ -1,0 +1,127 @@
+{% from 'header/macro.njk' import header %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'skip-link/macro.njk' import skipLink %}
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="ie8" lang="en"><![endif]--><!--[if IE 9]><html class="ie9" lang="en"><![endif]--><!--[if gt IE 9]><!--><html lang="en" style="{{ html_style }}"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <title>
+    {% block pageTitle %}
+    {% endblock %}
+    </title>
+
+    <link rel="preload" as="font" href="https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.woff2" type="font/woff2" crossorigin>
+    <link rel="preconnect  dns-prefetch" href="https://www.nhs.uk/">
+    <link rel="preconnect  dns-prefetch" href="https://assets.nhs.uk/" crossorigin>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="/nhsuk-frontend/nhsuk.min.js" defer></script>
+
+    {% block headIcons %}
+      <!--[if IE]><link rel="shortcut icon" href="/nhsuk-frontend/assets/favicons/favicon.ico"><![endif]-->
+      <link rel="apple-touch-icon" href="/nhsuk-frontend/assets/favicons/apple-touch-icon.png">
+      <link rel="icon" href="/nhsuk-frontend/assets/favicons/favicon.png">
+    {% endblock %}
+
+    <!-- Hotjar Tracking Code for http://partners.login.nhs.uk/ -->
+    
+    <script>
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1264808,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    
+    
+    <!-- Hotjar Tracking Code for http://nhs-login-onboarding.herokuapp.com/ -->
+    <!--<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1223985,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    -->
+  </head>
+
+  <body class="{{ bodyClasses }}">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    {% block bodyStart %}{% endblock %}
+
+      {% block skipLink %}
+        {{ skipLink({
+          href: '#main-content',
+          text: 'Skip to main content'
+        }) }}
+      {% endblock %}
+
+      <!--div class="feedback-survey-banner" role="region">
+        <div class="rich-text"><p>This is a new service, <a href="mailto:engage.nhslogin@nhs.net?subject=NHS login self service site feedback">Let us know how we can make it better.</a></p></div>
+      </div>
+      -->
+      <div id="nhsuk-cookie-banner" style="display: none">
+        <div class="nhsuk-cookie-banner" id="cookiebanner" aria-label="Cookie banner" role="banner">
+          <div class="nhsuk-width-container">
+            <p>We've put small files called cookies on your device to make the website better.</p>
+            <ul>
+              <li id="nhsuk-cookie-banner__link_accept"><a href="#" tabindex="1"><strong>I'm OK with cookies</strong></a></li>
+              <li id="nhsuk-cookie-banner__link"><a href="/policy/cookies" tabindex="2">Turn cookies on or off</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="nhsuk-success-banner" id="nhsuk-cookie-confirmation-banner" style="display:none;" role="banner">
+          <div class="nhsuk-width-container">
+            <p>Your cookie settings have been saved. <a href="/policy/cookies" style="color: #ffffff;">Turn cookies on or off</a></p>
+          </div>
+        </div>
+      </div>
+
+      {% block header %}
+        {{ header({}) }}
+      {% endblock %}
+
+      {% block beforeContent %}{% endblock %}
+
+      {% block main %}
+        <div class="nhsuk-width-container">
+          <main class="nhsuk-main-wrapper {{ mainClasses }}" id="main-content" role="main">
+            {% block content %}{% endblock %}
+          <script>
+              document.addEventListener("DOMContentLoaded", function(){
+                if (document.cookie.indexOf("cookiePreference=") >= 0) {
+                } else {
+                  document.getElementById('nhsuk-cookie-banner').style.display = "block";
+                  document.getElementById("nhsuk-cookie-banner__link_accept").addEventListener("click", function(){
+                    document.cookie = "cookiePreference = 1;";
+                    document.getElementById('nhsuk-cookie-banner').style.display = "none";
+                  });
+                }
+              });
+              </script>
+          </main>
+        </div>
+      {% endblock %}
+
+      {% block footer %}
+        {{ footer({
+          "showLogo": "false"
+        })}}
+      {% endblock %}
+
+    {% block bodyEnd %}{% endblock %}
+</html>

@@ -1,0 +1,88 @@
+{% extends 'v04/layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  Cookies - policies - NHS login
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "Home"
+    }],
+    href: "",
+    text: "cookies"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+
+
+	<h1>Cookies</h1>
+
+	<section id="intro">
+		<p>We put small files called cookies onto your device (for example your phone). </p>
+		<p>We use:</p>
+		<ul>
+			<!--<li>cookies that we need to put on your device for our platform to work</li>-->
+			<li>analytic cookies to collect information about how you use our platform to help us make improvements to it</li>
+		</ul>
+		<!--<p>We ask you to accept our privacy notice when you set up your <abbr title="National Health Service">NHS</abbr> login. By accepting our privacy notice, you agree to let us put both the cookies we need to set for our platform to work and analytic cookies on your device. </p>-->
+	</section>
+
+	<section id="analytics-cookies">
+		<h2 class="terms-heading">Analytic cookies</h2>
+		<p>We use Hotjar analytic to collect information about how you use our platform, for example the steps you make, what you click and when you leave. This helps us identify what doesn’t work so we can improve it.</p>
+		<p>These tools do not collect or store your personal information (for example your name or address). This means we cannot identify who you are.</p>
+		<p>We do not allow Hotjar to use or share our analytics data.</p>
+
+		<p>Hotjar will be use to set the following cookies: </p>
+
+		<div class="cookie-table">
+			<table>
+				<thead>
+				    <tr>
+					    <th>Name</th>
+					    <th>Purpose</th>
+					    <th>Expires</th>
+				    </tr>
+				</thead>
+				<tbody>
+				    <tr>
+					    <td><b>_hjShownFeedbackMessage</b></td>
+					    <td><p>This is set when you complete feedback or minimise the feedback option.</p>
+					    	<p>It keeps the feedback option minimised so you do not see it open when you go to another page.</p></td>
+					    <td>1 year</td>
+				    </tr>
+				    <tr>
+					    <td><b>_hjIncludedInSample</b></td>
+					    <td>This is set to tell Hotjar if you are included in a sample of user journeys used to generate heatmaps and funnels (ways to display data), and recordings.</td>
+					    <td>1 year</td>
+				    </tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<section id="managing-cookies">
+		<h2 class="terms-heading">Managing analytics cookies</h2>
+		<p>Collecting data on how people use our platform helps us improve it. But you can choose to stop your data being collected if you want to.</p>
+		<p>To turn off analytics cookies, you can:</p>
+		<ul>
+			<!--<li><a href="http://nhs.d3.sc.omtrdc.net/optout.html" target="_blank">opt out of Adobe analytics</a></li>-->
+			<li><a href="https://www.hotjar.com/legal/compliance/opt-out" target="_blank">opt out of Hotjar analytics</a></li>
+		</ul>
+	</section>
+
+	<section id="changes-to-cookies">
+		<h2 class="terms-heading">Changes to cookies</h2>
+		<p>Our terms of use may change. We will inform you on the site if we make any changes to our privacy notice, cookies or terms and conditions.</p>
+	</section>
+
+	<p class="small"><em>Last updated: 26th April 2019</em></p>
+
+
+{% endblock %}

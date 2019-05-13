@@ -1,4 +1,4 @@
-{% extends "includes/template.html" %}
+{% extends "v04/includes/template.html" %}
 
 {% from 'action-link/macro.njk' import actionLink %}
 {% from 'nav-a-z/macro.njk' import azNav %}
@@ -43,14 +43,33 @@
 {% block header %}
 
 {{ header({
-  "transactionalService": {
+    "transactionalService": {
       "name": "NHS login Self Service",
-      "href": "index"
+      "href": "/docs/v04/index"
     },
-    "showNav": "false",
-    "showSearch": "false"
+    "showNav": "true",
+    "showSearch": "false",
+    "primaryLinks": [
+      {
+        'url' : '/docs/v04/what-is-nhs-login',
+        'label' : 'What is NHS login'
+      },
+      {
+        'url'  : '/docs/v04/why-use-nhs-login',
+        'label' : 'Why use NHS login'
+      },
+      {
+        'url'  : '/docs/v04/how-it-works',
+        'label' : 'How it works'
+      },
+      {
+        'url' : '/docs/v04/onboarding/get-started',
+        'label' : 'Get started'
+      }
+    ]
   })
 }}
+
 
 {% endblock %}
 
@@ -59,12 +78,12 @@
   {{ footer({
     "links": [
       {
-        "URL": "/docs/v02/connecting/connecting",
-        "label": "Get Started"
+        'URL'  : '/docs/v04/policy/cookies',
+        'label' : 'Cookies'
       },
       {
-        "URL": "/docs/v02/documentation/service-description",
-        "label": "Documentation"
+        'URL'  : '/docs/v04/policy/terms-and-conditions',
+        'label' : 'Terms and Conditions'
       }
     ]
   })}}

@@ -1,0 +1,49 @@
+{% extends 'v04/layout.html' %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+  Accessiblity statement - policies - NHS login
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+      items: [
+    {
+      href: "../index",
+      text: "Home"
+    }],
+    href: "",
+    text: "cookies"
+    }) }}  
+{% endblock %}
+
+{% block content %}
+
+	<h1>Accessibility</h1>
+
+	<section id="intro">
+		<p>We want to make sure that the NHS login onboarding site is easy for everyone who uses it.</p>
+	</section>
+
+	<section id="accessibility-standards">
+		<h2 class="terms-heading">Accessibility standards</h2>
+		<p>NHS login onboarding site has been designed and built to meet the AA standard of the Web Content Accessibility Guidelines (WCAG) 2.1. There is some content that does not meet this standard, but we are working to fix these problems.</p>
+	</section>
+	<section id="content-standard">
+		<h2 class="terms-heading">Content that does not meet the standard</h2>
+		<p>Content that does not meet the WCAG 2.1 AA standard includes:</p>
+		<ul>
+			<li>We are still working on what doesn't work</li>
+		</ul>
+	</section>
+
+	<section id="accessibility-footer">
+		<h3>Last updated</h3>
+		<p>This statement was last updated on 26th April 2019.</p>
+		<h3>Contact us</h3>
+		<p>Please contact engage.nhslogin@nhs.net to report accessibility problems or give us feedback.</p>
+	</section>
+
+
+{% endblock %}
