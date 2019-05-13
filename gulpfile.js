@@ -7,8 +7,8 @@ const browserSync = require('browser-sync');
 const clean = require('gulp-clean');
 const sass = require('gulp-sass');
 const nodemon = require('gulp-nodemon');
-// const htmlmin = require('gulp-htmlmin');
-// const nunjucksRender = require('gulp-nunjucks-render');
+const htmlmin = require('gulp-htmlmin');
+const nunjucksRender = require('gulp-nunjucks-render');
 // const replace = require('gulp-string-replace');
 // const notify = require('gulp-notify');
 // const debug = require('gulp-debug');
@@ -59,16 +59,16 @@ function compileImages() {
 }
 
 // Clean the components folder
-//function cleanComponents() {
-//  return gulp.src('app/components', { allowEmpty: true})
-//  .pipe(clean());
-//}
+function cleanComponents() {
+  return gulp.src('app/components', { allowEmpty: true})
+  .pipe(clean());
+}
 
 // copy the components from nhsuk-frontend
-//function copyComponents() {
-//  return gulp.src('node_modules/nhsuk-frontend/packages/components/**/*')
-//        .pipe(gulp.dest('app/components'));
-//}
+function copyComponents() {
+  return gulp.src('node_modules/nhsuk-frontend/packages/components/**/*')
+        .pipe(gulp.dest('app/components'));
+}
 
 // Start nodemon
 function startNodemon(done) {
@@ -117,6 +117,48 @@ function startBrowserSync(done){
   gulp.watch("public/**/*.*").on("change", reload);
 }
 
+// Compile HTML
+function compileHTML() {
+  return gulp.src('app/views/**/*.+(html|nunjucks)')
+   .pipe(nunjucksRender({
+     path: ['app/views', 'app/components']
+   }))
+    .pipe(htmlmin(
+      {
+        collapseWhitespace: true,
+        removeComments: true
+      }))
+    .pipe(gulp.dest('public'))
+}
+
+// Replace URLS
+// This is not pretty, in fact it's quite horrific
+// This takes the static files that are output to the public folder
+// It loops through all the .html files and looks for internal links
+// and adds the .html extension so that it will work in an S3 bucket
+// I've search high and low for another method, either express to be
+// able to handle .html within the extensions or a way to build the
+// static files
+// I could improve this by taking the current src and using that to
+// check what is referencing it
+
+// function replaceURLS() {
+//  return gulp.src('public/**/*.+(html)')
+//    .pipe(notify({ message: 'starting' }))
+//    .pipe(replace('what-is-nhs-login', 'what-is-nhs-login.html'))
+//    .pipe(replace('why-use-nhs-login', 'why-use-nhs-login.html'))
+//    .pipe(replace('index', 'index.html'))
+//    .pipe(replace('how-it-works', 'how-it-works.html'))
+//    .pipe(replace('features', 'features.html'))
+//    .pipe(replace('authentication-verification', 'authentication-verification.html'))
+//    .pipe(replace('safety-and-security', 'safety-and-security.html'))
+//    .pipe(replace('get-started', 'get-started.html'))
+//    .pipe(replace('onboarding-summary', 'onboarding-summary.html'))
+//    .pipe(replace('request-onboarding', 'request-onboarding.html'))
+//    .pipe(notify({ message: 'found one' }))
+//    .pipe(gulp.dest('public'));
+// }
+
 // Watch for changes within assets/
 function watch() {
   gulp.watch('app/assets/sass/**/*.scss', compileStyles);
@@ -133,8 +175,8 @@ exports.compileScripts = compileScripts;
 exports.cleanPublic = cleanPublic;
 
 gulp.task('clean', gulp.series(cleanPublic));
-//gulp.task('HTML', gulp.series(copyComponents, compileHTML));
-// gulp.task('public', gulp.series(cleanComponents, copyComponents, cleanPublic, compileScripts, compileImages, compileStyles, compileHTML, cleanComponents));
+gulp.task('HTML', gulp.series(copyComponents, compileHTML));
+ gulp.task('public', gulp.series(cleanComponents, copyComponents, cleanPublic, compileScripts, compileImages, compileStyles, compileHTML, cleanComponents));
 // gulp.task('replace', gulp.series(replaceURLS));
 gulp.task('build', gulp.series(cleanPublic, compileStyles, compileScripts, compileImages));
 gulp.task('default', gulp.series(startNodemon, startBrowserSync, watch));
